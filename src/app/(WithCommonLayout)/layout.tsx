@@ -1,12 +1,12 @@
-import Navbar from "@/components/Shared/Navbar/Navbar";
+import SidebarDrawer from "@/components/SidebarDrawer/SidebarDrawer";
 import React from "react";
 
 const CommonLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div>
-      <Navbar />
-      {children}
-    </div>
+    <>
+      <h1>Main page</h1>
+      <SidebarDrawer>{children}</SidebarDrawer>
+    </>
   );
 };
 
