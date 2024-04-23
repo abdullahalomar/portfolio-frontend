@@ -1,12 +1,9 @@
-import Sidebar from "@/components/Shared/Navbar/Navbar";
-import { Box, Button } from "@mui/material";
-import React from "react";
+import HeroSection from "@/components/UI/HeroSection/HeroSection";
 
 const HomePage = () => {
   return (
     <>
-      <h1>Welcome to my portfolio</h1>
-      <Button>Contained</Button>
+      <HeroSection />
     </>
   );
 };

@@ -11,7 +11,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import SideBar from "../Sidebar/Sidebar";
 
-const drawerWidth = 240;
+const drawerWidth = 170;
 
 export default function SidebarDrawer({
   children,
@@ -104,11 +104,9 @@ export default function SidebarDrawer({
         component="main"
         sx={{
           flexGrow: 1,
-          p: 3,
           width: { sm: `calc(100% - ${drawerWidth}px)` },
         }}
       >
-        <Toolbar />
         <Box>{children}</Box>
       </Box>
     </Box>
