@@ -8,16 +8,15 @@ import {
   Typography,
 } from "@mui/material";
 import Link from "next/link";
-import InfoIcon from "@mui/icons-material/Info";
-import ArticleIcon from "@mui/icons-material/Article";
 
 import SpeedDialIcon from "@mui/material/SpeedDialIcon";
 import SpeedDialAction from "@mui/material/SpeedDialAction";
-import ShareIcon from "@mui/icons-material/Share";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import GitHubIcon from "@mui/icons-material/GitHub";
+import Image from "next/image";
+import logo from "@/assets/cartoon-logo-1.png";
 
 const actions = [
   {
@@ -57,26 +56,37 @@ const SideBar = () => {
         component={Link}
         href="/"
       >
-        {/* <Image src={logo} width={80} height={80} alt="logo" /> */}
-        <Typography variant="h6" component="h1" sx={{ cursor: "pointer" }}>
+        <Image src={logo} width={80} height={80} alt="logo" />
+        {/* <Typography variant="h6" component="h1" sx={{ cursor: "pointer" }}>
           Abdullah Al Omar
-        </Typography>
+        </Typography> */}
       </Stack>
 
       <Box>
         <List>
           <ListItem>
             <ListItemButton>
-              <InfoIcon />
-              <Typography paddingLeft={2} component={Link} href="/about">
+              <Typography
+                paddingLeft={3}
+                component={Link}
+                href="/about"
+                sx={{
+                  fontWeight: "700",
+                  fontSize: "20px",
+                }}
+              >
                 About
               </Typography>
             </ListItemButton>
           </ListItem>
           <ListItem>
             <ListItemButton>
-              <ArticleIcon />
-              <Typography paddingLeft={2} component={Link} href="/blog">
+              <Typography
+                paddingLeft={3}
+                component={Link}
+                href="/blog"
+                sx={{ fontWeight: "700", fontSize: "20px" }}
+              >
                 Blog
               </Typography>
             </ListItemButton>

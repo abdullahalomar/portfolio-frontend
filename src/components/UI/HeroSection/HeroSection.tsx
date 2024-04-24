@@ -5,7 +5,38 @@
 import { Box, Button, Container, Typography } from "@mui/material";
 import heroImage from "@/assets/hero-img.png";
 import Image from "next/image";
-import BounceCircle from "@/utils/BounceCircle/bounceCircle";
+import { keyframes } from "@emotion/react";
+
+const bounceAnimation = keyframes`
+  0% {
+    transform: translateY(-30px);
+  }
+  50% {
+    transform: translateX(-30px);
+  }
+  100% {
+    transform: translateY(-30px);
+  }
+`;
+// const bounceAnimation = keyframes`
+// {
+//   0% {
+//     transform: translateY(-20px, 20px);
+//   }
+//   25% {
+//     transform: translateY(20px, 20px);
+//   }
+//   50% {
+//     transform: translate(20px, -20px);
+//   }
+//   75% {
+//     transform: translate(-20px, -20px);
+//   }
+//   100% {
+//     transform: translate(-20px, 20px);
+//   }
+// }
+// `;
 
 const HeroSection = () => {
   return (
@@ -32,7 +63,6 @@ const HeroSection = () => {
             },
           }}
         >
-          <BounceCircle />
           <Box>
             <Typography sx={{ fontSize: "60px", fontWeight: "bold" }}>
               <Box component="span" sx={{ color: "primary.main" }}>
@@ -41,7 +71,12 @@ const HeroSection = () => {
               , I'm Abdullah Al Omar
             </Typography>
 
-            <Typography sx={{ fontSize: "40px", fontWeight: "semibold" }}>
+            <Typography
+              sx={{
+                fontSize: "40px",
+                fontWeight: "semibold",
+              }}
+            >
               Frontend Developer
             </Typography>
 
@@ -56,6 +91,19 @@ const HeroSection = () => {
 
           <Box sx={{ position: "relative", marginTop: 3 }}>
             <Image src={heroImage} alt="hero-image" height={500} width={500} />
+            <Box
+              sx={{
+                position: "absolute",
+                height: 20,
+                width: 20,
+                borderRadius: "50%",
+                backgroundColor: "primary.main",
+                left: 100,
+                right: 30,
+                bottom: 20,
+                animation: `${bounceAnimation} 3s infinite`, // Translate the box to center it
+              }}
+            ></Box>
             <Box
               sx={{
                 backgroundColor: "primary.main",
