@@ -1,8 +1,10 @@
-import { Box, Container, Stack, Typography } from "@mui/material";
+/* eslint-disable react/no-unescaped-entities */
+import { Box, Container, Grid, Stack, Typography } from "@mui/material";
 import Image from "next/image";
 import ab from "@/assets/img/breadcrum/ab-1.1.jpg";
 import Link from "next/link";
 import heroImage from "@/assets/professional.png";
+import CheckIcon from "@mui/icons-material/Check";
 
 import facebook from "@/assets/img/icons/facebook.png";
 import twitter from "@/assets/img/icons/twitter.png";
@@ -25,7 +27,7 @@ const AboutPage = () => {
             lg: "row",
             xl: "row",
           }}
-          spacing={{ xs: 1, sm: 2, md: 4 }}
+          spacing={{ xs: 1, sm: 2, md: 4, lg: 4, xl: 4 }}
         >
           <Stack
             direction={{
@@ -35,7 +37,7 @@ const AboutPage = () => {
               lg: "column",
               xl: "column",
             }}
-            spacing={{ xs: 1, sm: 2, md: 4 }}
+            spacing={{ xs: 1, sm: 2, md: 4, lg: 4, xl: 4 }}
             marginRight={20}
           >
             <Link href="#">
@@ -59,23 +61,32 @@ const AboutPage = () => {
             </Link>
           </Stack>
           <Box sx={{ paddingLeft: "160px" }}>
-            <Typography sx={{ fontSize: "25px", fontWeight: "600" }}>
-              Abdullah Al Omar
+            <Typography variant="h4">Abdullah Al Omar</Typography>
+            <Typography sx={{ color: "#5956E9" }}>
+              Frontend Web Developer
             </Typography>
-            <Typography>Frontend Web Developer</Typography>
-            <Typography>
-              {/* Frontend development expertise: Proficiency in HTML, CSS, JS,
-              React, NExt.js. Design skills, problem-solving, collaboration
-              crucial. User-focused. */}
+            <Typography mt={3} mb={4} sx={{ color: "#717891" }}>
+              Proficiency in HTML, CSS, JS, React, NExt.js. <br /> Design
+              skills, problem-solving, collaboration <br /> crucial.
+              User-focused.
             </Typography>
-            <Typography>
-              <Box component="span">Expertise</Box>: Web Design & Development
+            <Typography sx={{ color: "#717891" }}>
+              <Box sx={{ color: "black", fontWeight: "600" }} component="span">
+                Expertise
+              </Box>
+              : Web Design & Development
             </Typography>
-            <Typography>
-              <Box component="span">Experience</Box>: 3 Years
+            <Typography my={3} sx={{ color: "#717891" }}>
+              <Box sx={{ color: "black", fontWeight: "600" }} component="span">
+                Experience
+              </Box>
+              : 3 Years
             </Typography>
-            <Typography>
-              <Box component="span">E-mail</Box>: abdullahalomar048@gmail.com
+            <Typography sx={{ color: "#717891" }}>
+              <Box sx={{ color: "black", fontWeight: "600" }} component="span">
+                E-mail
+              </Box>
+              : abdullahalomar048@gmail.com
             </Typography>
           </Box>
           <Box>
@@ -83,27 +94,95 @@ const AboutPage = () => {
               className="rounded-2xl"
               src={heroImage}
               alt="hero image"
-              height="604"
+              height="550"
               width="537"
             />
           </Box>
         </Stack>
         <Box>
-          <Typography>Personal Experience</Typography>
-          <Typography>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus
-            veritatis necessitatibus natus illo corrupti vitae libero,
-            cupiditate veniam deleniti facere autem velit, quibusdam eligendi ab
-            voluptatibus laborum nobis ex adipisci quo, eaque dolor soluta.
-            Libero est exercitationem sequi soluta corporis, possimus excepturi
-            laboriosam. Quis dolor minima voluptatum aperiam laboriosam veniam
-            illo molestias dolorem maxime, sequi magni provident nihil quod,
-            odit amet ea quibusdam nulla ex hic. Dicta et impedit aliquid a
-            fugiat alias assumenda est ipsam inventore id rerum, eligendi
-            laborum tenetur deserunt voluptas sed dolorum sit! Reiciendis
-            incidunt rerum officiis odio, atque aperiam nostrum libero quis cum
-            ipsam saepe.
+          <Typography mb={2} sx={{ fontSize: "30px" }}>
+            Personal Experience
           </Typography>
+          <Typography>
+            In my capacity as a web developer, I create the online environments
+            that allow people and companies to prosper. I design visually
+            beautiful and functional websites and online applications using a
+            variety of programming languages, frameworks, and tools. In order to
+            ensure smooth navigation, responsiveness, and cross-browser
+            compatibility, my task entails converting design thoughts into code.
+            In order to provide cutting-edge solutions, I diagnose and debug
+            problems, optimise performance, and keep up with the newest trends
+            and technology. My main goal is to improve user experience and
+            assist my clients in successfully achieving their online goals.
+          </Typography>
+        </Box>
+
+        <Box mt={5}>
+          <Grid container spacing={{ xs: 2, sm: 2, md: 8, lg: 8, xl: 8 }}>
+            <Grid item xs={12} sm={12} md={4} lg={4} xl={4}>
+              <Box>
+                <Typography variant="h5">Interests</Typography>
+                <Typography my={3} sx={{ color: "#717891" }}>
+                  The interest section on a resume provides insight into
+                  hobbies, passions, and community involvement, shaping a
+                  candidate's personality and cultural fit.
+                </Typography>
+                <Box>
+                  <Typography>
+                    Extramural Funding <CheckIcon htmlColor="#5956E9" />
+                  </Typography>
+                  <Typography>
+                    Extramural Funding <CheckIcon htmlColor="#5956E9" />
+                  </Typography>
+                  <Typography>
+                    Extramural Funding <CheckIcon htmlColor="#5956E9" />
+                  </Typography>
+                </Box>
+              </Box>
+            </Grid>
+            <Grid item xs={12} sm={12} md={4} lg={4} xl={4}>
+              <Box>
+                <Typography variant="h5">Education</Typography>
+                <Typography my={3} sx={{ color: "#717891" }}>
+                  The education section on a resume details academic
+                  achievements, degrees earned, institutions attended, and
+                  relevant coursework or honors received.
+                </Typography>
+                <Typography>
+                  Extramural Funding <CheckIcon htmlColor="#5956E9" />
+                </Typography>
+                <Typography>
+                  Extramural Funding <CheckIcon htmlColor="#5956E9" />
+                </Typography>
+                <Typography>
+                  Extramural Funding <CheckIcon htmlColor="#5956E9" />
+                </Typography>
+              </Box>
+            </Grid>
+            <Grid item xs={12} sm={12} md={4} lg={4} xl={4}>
+              <Box>
+                <Typography variant="h5">Skills</Typography>
+                <Typography my={3} sx={{ color: "#717891" }}>
+                  The skills section highlights proficiencies, expertise, and
+                  capabilities relevant to the job, demonstrating a candidate's
+                  qualifications and competency.
+                </Typography>
+                <Typography>
+                  Extramural Funding <CheckIcon htmlColor="#5956E9" />
+                </Typography>
+                <Typography>
+                  Extramural Funding <CheckIcon htmlColor="#5956E9" />
+                </Typography>
+                <Typography>
+                  Extramural Funding <CheckIcon htmlColor="#5956E9" />
+                </Typography>
+              </Box>
+            </Grid>
+          </Grid>
+        </Box>
+
+        <Box>
+          <form action=""></form>
         </Box>
       </Container>
     </Box>
