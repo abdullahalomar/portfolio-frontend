@@ -1,5 +1,12 @@
 /* eslint-disable react/no-unescaped-entities */
-import { Box, Container, Grid, Stack, Typography } from "@mui/material";
+import {
+  Box,
+  Container,
+  Grid,
+  Stack,
+  TextField,
+  Typography,
+} from "@mui/material";
 import Image from "next/image";
 import ab from "@/assets/img/breadcrum/ab-1.1.jpg";
 import Link from "next/link";
@@ -11,6 +18,7 @@ import twitter from "@/assets/img/icons/twitter.png";
 import linkedin from "@/assets/img/icons/linkedin.png";
 import github from "@/assets/img/icons/github.png";
 import youtube from "@/assets/img/icons/youtube.png";
+import ContactForm from "@/components/ContactForm/ContactForm";
 
 const AboutPage = () => {
   return (
@@ -179,10 +187,6 @@ const AboutPage = () => {
               </Box>
             </Grid>
           </Grid>
-        </Box>
-
-        <Box>
-          <form action=""></form>
         </Box>
       </Container>
     </Box>
