@@ -35,6 +35,10 @@ export default function ContactForm() {
                     label="Name"
                     placeholder="Enter Your Name"
                     fullWidth
+                    sx={{
+                      boxShadow: "0 1px 5px 1px rgb(175, 113, 242)",
+                      borderRadius: 1,
+                    }}
                   />
                 </Box>
               </Grid>
@@ -43,6 +47,10 @@ export default function ContactForm() {
                   label="email"
                   placeholder="Enter Your Email"
                   fullWidth
+                  sx={{
+                    boxShadow: "0 1px 5px 1px rgb(175, 113, 242)",
+                    borderRadius: 1,
+                  }}
                 />
               </Grid>
               <Grid item xs={12} md={12} lg={12}>
@@ -52,6 +60,10 @@ export default function ContactForm() {
                   rows={5}
                   defaultValue="Enter Your Message"
                   fullWidth
+                  sx={{
+                    boxShadow: "0 1px 5px 1px rgb(175, 113, 242)",
+                    borderRadius: 1,
+                  }}
                 />
               </Grid>
             </Grid>

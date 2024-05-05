@@ -1,4 +1,11 @@
-import { Box, Container, Grid, Typography } from "@mui/material";
+import {
+  Box,
+  Container,
+  Divider,
+  Grid,
+  Tooltip,
+  Typography,
+} from "@mui/material";
 import bootstrap from "@/assets/img/skills/bootstrap.png";
 import tailwind from "@/assets/img/skills/tailwind.png";
 import mui from "@/assets/img/skills/mui.png";
@@ -14,303 +21,52 @@ const Skill = () => {
   return (
     <Box>
       <Container>
-        <Grid container spacing={5} columns={20}>
+        <Grid container spacing={4} columns={20}>
           <Grid item xs={20} sm={10} md={4}>
-            <Box
-              sx={{
-                paddingX: "35px",
-                paddingTop: "25px",
-                paddingBottom: "40px",
-                border: "2px solid gray",
-                borderRadius: "30px",
-                borderColor: "#9991C9",
-              }}
-            >
-              <Box
-                sx={{
-                  background:
-                    "linear-gradient(45deg, #f7f7f7 30%, #9991C9 70%)",
-                  borderRadius: "50%",
-                  padding: 3,
-                }}
-              >
-                <Image src={bootstrap} height={60} width={60} alt="bootstrap" />
-              </Box>
-              <Typography
-                pt={4}
-                sx={{
-                  fontSize: 17,
-                  fontWeight: 600,
-                  textAlign: "center",
-                }}
-              >
-                Bootstrap
-              </Typography>
-            </Box>
+            <Tooltip title="Bootstrap" disableInteractive>
+              <Image src={bootstrap} height={70} width={70} alt="bootstrap" />
+            </Tooltip>
+          </Grid>
+
+          <Grid item xs={20} sm={10} md={4}>
+            <Tooltip title="Tailwind CSS" disableInteractive>
+              <Image src={tailwind} height={70} width={70} alt="bootstrap" />
+            </Tooltip>
           </Grid>
           <Grid item xs={20} sm={10} md={4}>
-            <Box
-              sx={{
-                paddingX: "35px",
-                paddingTop: "25px",
-                paddingBottom: "40px",
-                border: "2px solid gray",
-                borderRadius: "30px",
-                borderColor: "#9991C9",
-              }}
-            >
-              <Box
-                sx={{
-                  background:
-                    "linear-gradient(45deg, #f7f7f7 30%, #9991C9 70%)",
-                  borderRadius: "50%",
-                  padding: 3,
-                }}
-              >
-                <Image src={bootstrap} height={60} width={60} alt="bootstrap" />
-              </Box>
-              <Typography
-                pt={4}
-                sx={{
-                  fontSize: 17,
-                  fontWeight: 600,
-                  textAlign: "center",
-                }}
-              >
-                Bootstrap
-              </Typography>
-            </Box>
+            <Tooltip title="Material UI" disableInteractive>
+              <Image src={mui} height={70} width={70} alt="bootstrap" />
+            </Tooltip>
           </Grid>
           <Grid item xs={20} sm={10} md={4}>
-            <Box
-              sx={{
-                paddingX: "35px",
-                paddingTop: "25px",
-                paddingBottom: "40px",
-                border: "2px solid gray",
-                borderRadius: "30px",
-                borderColor: "#9991C9",
-              }}
-            >
-              <Box
-                sx={{
-                  background:
-                    "linear-gradient(45deg, #f7f7f7 30%, #9991C9 70%)",
-                  borderRadius: "50%",
-                  padding: 3,
-                }}
-              >
-                <Image src={bootstrap} height={60} width={60} alt="bootstrap" />
-              </Box>
-              <Typography
-                pt={4}
-                sx={{
-                  fontSize: 17,
-                  fontWeight: 600,
-                  textAlign: "center",
-                }}
-              >
-                Bootstrap
-              </Typography>
-            </Box>
+            <Tooltip title="Javascript" disableInteractive>
+              <Image src={js} height={70} width={70} alt="bootstrap" />
+            </Tooltip>
           </Grid>
           <Grid item xs={20} sm={10} md={4}>
-            <Box
-              sx={{
-                paddingX: "35px",
-                paddingTop: "25px",
-                paddingBottom: "40px",
-                border: "2px solid gray",
-                borderRadius: "30px",
-                borderColor: "#9991C9",
-              }}
-            >
-              <Box
-                sx={{
-                  background:
-                    "linear-gradient(45deg, #f7f7f7 30%, #9991C9 70%)",
-                  borderRadius: "50%",
-                  padding: 3,
-                }}
-              >
-                <Image src={bootstrap} height={60} width={60} alt="bootstrap" />
-              </Box>
-              <Typography
-                pt={4}
-                sx={{
-                  fontSize: 17,
-                  fontWeight: 600,
-                  textAlign: "center",
-                }}
-              >
-                Bootstrap
-              </Typography>
-            </Box>
+            <Tooltip title="React JS" disableInteractive>
+              <Image src={react} height={70} width={70} alt="bootstrap" />
+            </Tooltip>
           </Grid>
           <Grid item xs={20} sm={10} md={4}>
-            <Box
-              sx={{
-                paddingX: "35px",
-                paddingTop: "25px",
-                paddingBottom: "40px",
-                border: "2px solid gray",
-                borderRadius: "30px",
-                borderColor: "#9991C9",
-              }}
-            >
-              <Box
-                sx={{
-                  background:
-                    "linear-gradient(45deg, #f7f7f7 30%, #9991C9 70%)",
-                  borderRadius: "50%",
-                  padding: 3,
-                }}
-              >
-                <Image src={bootstrap} height={60} width={60} alt="bootstrap" />
-              </Box>
-              <Typography
-                pt={4}
-                sx={{
-                  fontSize: 17,
-                  fontWeight: 600,
-                  textAlign: "center",
-                }}
-              >
-                Bootstrap
-              </Typography>
-            </Box>
+            <Tooltip title="Next JS" disableInteractive>
+              <Image src={next} height={70} width={70} alt="bootstrap" />
+            </Tooltip>
           </Grid>
           <Grid item xs={20} sm={10} md={4}>
-            <Box
-              sx={{
-                paddingX: "35px",
-                paddingTop: "25px",
-                paddingBottom: "40px",
-                border: "2px solid gray",
-                borderRadius: "30px",
-                borderColor: "#9991C9",
-              }}
-            >
-              <Box
-                sx={{
-                  background:
-                    "linear-gradient(45deg, #f7f7f7 30%, #9991C9 70%)",
-                  borderRadius: "50%",
-                  padding: 3,
-                }}
-              >
-                <Image src={bootstrap} height={60} width={60} alt="bootstrap" />
-              </Box>
-              <Typography
-                pt={4}
-                sx={{
-                  fontSize: 17,
-                  fontWeight: 600,
-                  textAlign: "center",
-                }}
-              >
-                Bootstrap
-              </Typography>
-            </Box>
+            <Tooltip title="Node JS" disableInteractive>
+              <Image src={node} height={70} width={70} alt="bootstrap" />
+            </Tooltip>
           </Grid>
           <Grid item xs={20} sm={10} md={4}>
-            <Box
-              sx={{
-                paddingX: "35px",
-                paddingTop: "25px",
-                paddingBottom: "40px",
-                border: "2px solid gray",
-                borderRadius: "30px",
-                borderColor: "#9991C9",
-              }}
-            >
-              <Box
-                sx={{
-                  background:
-                    "linear-gradient(45deg, #f7f7f7 30%, #9991C9 70%)",
-                  borderRadius: "50%",
-                  padding: 3,
-                }}
-              >
-                <Image src={bootstrap} height={60} width={60} alt="bootstrap" />
-              </Box>
-              <Typography
-                pt={4}
-                sx={{
-                  fontSize: 17,
-                  fontWeight: 600,
-                  textAlign: "center",
-                }}
-              >
-                Bootstrap
-              </Typography>
-            </Box>
+            <Tooltip title="Mongo DB" disableInteractive>
+              <Image src={mongo} height={40} width={40} alt="bootstrap" />
+            </Tooltip>
           </Grid>
           <Grid item xs={20} sm={10} md={4}>
-            <Box
-              sx={{
-                paddingX: "35px",
-                paddingTop: "25px",
-                paddingBottom: "40px",
-                border: "2px solid gray",
-                borderRadius: "30px",
-                borderColor: "#9991C9",
-              }}
-            >
-              <Box
-                sx={{
-                  background:
-                    "linear-gradient(45deg, #f7f7f7 30%, #9991C9 70%)",
-                  borderRadius: "50%",
-                  padding: 3,
-                }}
-              >
-                <Image src={bootstrap} height={60} width={60} alt="bootstrap" />
-              </Box>
-              <Typography
-                pt={4}
-                sx={{
-                  fontSize: 17,
-                  fontWeight: 600,
-                  textAlign: "center",
-                }}
-              >
-                Bootstrap
-              </Typography>
-            </Box>
-          </Grid>
-          <Grid item xs={20} sm={10} md={4}>
-            <Box
-              sx={{
-                paddingX: "35px",
-                paddingTop: "25px",
-                paddingBottom: "40px",
-                border: "2px solid gray",
-                borderRadius: "30px",
-                borderColor: "#9991C9",
-              }}
-            >
-              <Box
-                sx={{
-                  background:
-                    "linear-gradient(45deg, #f7f7f7 30%, #9991C9 70%)",
-                  borderRadius: "50%",
-                  padding: 3,
-                }}
-              >
-                <Image src={bootstrap} height={60} width={60} alt="bootstrap" />
-              </Box>
-              <Typography
-                pt={4}
-                sx={{
-                  fontSize: 17,
-                  fontWeight: 600,
-                  textAlign: "center",
-                }}
-              >
-                Bootstrap
-              </Typography>
-            </Box>
+            <Tooltip title="MY SQL" disableInteractive>
+              <Image src={sql} height={70} width={70} alt="bootstrap" />
+            </Tooltip>
           </Grid>
         </Grid>
       </Container>
