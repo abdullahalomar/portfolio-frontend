@@ -1,7 +1,7 @@
 import { Button, Container, Grid, Typography } from "@mui/material";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
-import contactImage from "@/assets/img/contact/contact-1.jpg";
+import telephone from "@/assets/img/itelephone.gif";
 import Image from "next/image";
 
 export default function ContactForm() {
@@ -11,17 +11,19 @@ export default function ContactForm() {
         component="form"
         sx={{
           my: 11,
+          // backgroundImage: `url(${map})`,
+          // backgroundSize: "cover",
+          // backgroundRepeat: "no-repeat",
         }}
       >
-        <Box>
-          <Typography color="black" fontSize="60px" fontWeight="600" mb={2}>
-            Let’s Talk...
-          </Typography>
-        </Box>
-
         <Box
           sx={{
-            display: { xs: "flex-wrap", sm: "flex-wrap", md: "flex" },
+            display: {
+              xs: "flex-wrap",
+              sm: "flex-wrap",
+              md: "flex",
+              lg: "flex",
+            },
             justifyContent: "space-between",
           }}
         >
@@ -57,26 +59,43 @@ export default function ContactForm() {
           </Box>
 
           <Box>
-            <Box sx={{ height: "200px", width: "250px" }}>
-              <Image
-                src={contactImage}
-                height={400}
-                width={400}
-                alt="contact-Image"
-              />
+            <Box>
+              <Typography color="black" fontSize="60px" fontWeight="600" mb={2}>
+                Let’s Talk...
+              </Typography>
             </Box>
+
             <Box mt={6}>
               <Box>
+                <Box sx={{ display: "flex" }}>
+                  <Image
+                    src={telephone}
+                    height={40}
+                    width={40}
+                    alt="contact-Image"
+                  />
+                  <Typography
+                    sx={{
+                      fontSize: "30px",
+                      fontWeight: "600",
+                      marginLeft: "5px",
+                    }}
+                  >
+                    +88 01643990060
+                  </Typography>
+                </Box>
+              </Box>
+              <Box my={3}>
                 <Typography sx={{ fontSize: "20px", fontWeight: "600" }}>
                   Mail Address
                 </Typography>
                 <Typography>abdullahalomar048@gmail.com</Typography>
               </Box>
-              <Box my={3}>
+              <Box>
                 <Typography sx={{ fontSize: "20px", fontWeight: "600" }}>
-                  Phone Number
+                  Location
                 </Typography>
-                <Typography>abdullahalomar048@gmail.com</Typography>
+                <Typography>Dhaka, Bangladesh</Typography>
               </Box>
             </Box>
           </Box>

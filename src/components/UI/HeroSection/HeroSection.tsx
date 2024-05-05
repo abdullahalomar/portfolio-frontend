@@ -40,7 +40,7 @@ const bounceAnimation = keyframes`
 
 const HeroSection = () => {
   return (
-    <Box sx={{ position: "relative" }}>
+    <Box mb={13} sx={{ position: "relative" }}>
       <Container>
         <Box
           sx={{
