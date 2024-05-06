@@ -1,20 +1,66 @@
 /* eslint-disable react/no-unescaped-entities */
-import { Box, Container, Grid, Stack, Typography } from "@mui/material";
+"use client";
+import {
+  Box,
+  Button,
+  Container,
+  Grid,
+  Paper,
+  Stack,
+  StepContent,
+  Typography,
+} from "@mui/material";
 import Image from "next/image";
 import ab from "@/assets/img/breadcrum/ab-1.1.jpg";
 import Link from "next/link";
 import heroImage from "@/assets/professional.png";
 import CheckIcon from "@mui/icons-material/Check";
 
+import Stepper from "@mui/material/Stepper";
+import Step from "@mui/material/Step";
+import StepLabel from "@mui/material/StepLabel";
+
 import facebook from "@/assets/img/icons/facebook.png";
 import twitter from "@/assets/img/icons/twitter.png";
 import linkedin from "@/assets/img/icons/linkedin.png";
 import github from "@/assets/img/icons/github.png";
 import youtube from "@/assets/img/icons/youtube.png";
+import { useState } from "react";
+
+const steps = [
+  {
+    label: "SSC",
+    school: `Bhandaria Bihari Pilot High School`,
+    department: `Vocational`,
+    year: "2012 - 2017",
+  },
+  {
+    label: "Diploma Engineering",
+    school: `Barishal Polytechnic Institute`,
+    department: `Computer Technology`,
+    year: "2017 - 2021",
+  },
+  {
+    label: "BSC Engineering",
+    school: `University of Global Village`,
+    department: `Computer Science & Engineering`,
+    year: "2022 - 2026",
+  },
+];
 
 const AboutPage = () => {
+  const [activeStep, setActiveStep] = useState(0);
+
+  const handleNext = () => {
+    setActiveStep((prevActiveStep) => prevActiveStep + 1);
+  };
+
+  const handleBack = () => {
+    setActiveStep((prevActiveStep) => prevActiveStep - 1);
+  };
+
   return (
-    <Box>
+    <Box mb={10}>
       <Box maxHeight="641px" maxWidth="100%" mb={10}>
         <Image src={ab} alt="ab" height={641} width={1920} />
       </Box>
@@ -129,13 +175,13 @@ const AboutPage = () => {
                 </Typography>
                 <Box>
                   <Typography>
-                    Extramural Funding <CheckIcon htmlColor="#5956E9" />
+                    Poem Writing <CheckIcon htmlColor="#5956E9" />
                   </Typography>
                   <Typography>
-                    Extramural Funding <CheckIcon htmlColor="#5956E9" />
+                    Reciting <CheckIcon htmlColor="#5956E9" />
                   </Typography>
                   <Typography>
-                    Extramural Funding <CheckIcon htmlColor="#5956E9" />
+                    Drawing <CheckIcon htmlColor="#5956E9" />
                   </Typography>
                 </Box>
               </Box>
@@ -148,15 +194,49 @@ const AboutPage = () => {
                   achievements, degrees earned, institutions attended, and
                   relevant coursework or honors received.
                 </Typography>
-                <Typography>
-                  Extramural Funding <CheckIcon htmlColor="#5956E9" />
-                </Typography>
-                <Typography>
-                  Extramural Funding <CheckIcon htmlColor="#5956E9" />
-                </Typography>
-                <Typography>
-                  Extramural Funding <CheckIcon htmlColor="#5956E9" />
-                </Typography>
+                <Box sx={{ maxWidth: 400 }}>
+                  <Stepper activeStep={activeStep} orientation="vertical">
+                    {steps.map((step, index) => (
+                      <Step key={step.label}>
+                        <StepLabel
+                          optional={
+                            index === 2 ? (
+                              <Typography variant="caption"></Typography>
+                            ) : null
+                          }
+                        >
+                          {step.label}
+                        </StepLabel>
+                        <StepContent>
+                          <Typography fontSize={20}>{step.school}</Typography>
+                          <Typography fontWeight={600}>
+                            {step.department}
+                          </Typography>
+                          <Typography>{step.year}</Typography>
+                          <Box sx={{ mb: 2 }}>
+                            <div>
+                              {index === steps.length - 1 ? null : (
+                                <Button
+                                  onClick={handleNext}
+                                  sx={{ mt: 1, mr: 1 }}
+                                >
+                                  Continue
+                                </Button>
+                              )}
+                              <Button
+                                disabled={index === 0}
+                                onClick={handleBack}
+                                sx={{ mt: 1, mr: 1 }}
+                              >
+                                Back
+                              </Button>
+                            </div>
+                          </Box>
+                        </StepContent>
+                      </Step>
+                    ))}
+                  </Stepper>
+                </Box>
               </Box>
             </Grid>
             <Grid item xs={12} sm={12} md={4} lg={4} xl={4}>
@@ -168,13 +248,31 @@ const AboutPage = () => {
                   qualifications and competency.
                 </Typography>
                 <Typography>
-                  Extramural Funding <CheckIcon htmlColor="#5956E9" />
+                  Html <CheckIcon htmlColor="#5956E9" />
                 </Typography>
                 <Typography>
-                  Extramural Funding <CheckIcon htmlColor="#5956E9" />
+                  CSS <CheckIcon htmlColor="#5956E9" />
                 </Typography>
                 <Typography>
-                  Extramural Funding <CheckIcon htmlColor="#5956E9" />
+                  Javascript <CheckIcon htmlColor="#5956E9" />
+                </Typography>
+                <Typography>
+                  React <CheckIcon htmlColor="#5956E9" />
+                </Typography>
+                <Typography>
+                  Next JS <CheckIcon htmlColor="#5956E9" />
+                </Typography>
+                <Typography>
+                  Mongo DB <CheckIcon htmlColor="#5956E9" />
+                </Typography>
+                <Typography>
+                  My SQl <CheckIcon htmlColor="#5956E9" />
+                </Typography>
+                <Typography>
+                  Node JS <CheckIcon htmlColor="#5956E9" />
+                </Typography>
+                <Typography>
+                  Express JS <CheckIcon htmlColor="#5956E9" />
                 </Typography>
               </Box>
             </Grid>
