@@ -18,27 +18,16 @@ const bounceAnimation = keyframes`
     transform: translateY(-30px);
   }
 `;
-// const bounceAnimation = keyframes`
-// {
-//   0% {
-//     transform: translateY(-20px, 20px);
-//   }
-//   25% {
-//     transform: translateY(20px, 20px);
-//   }
-//   50% {
-//     transform: translate(20px, -20px);
-//   }
-//   75% {
-//     transform: translate(-20px, -20px);
-//   }
-//   100% {
-//     transform: translate(-20px, 20px);
-//   }
-// }
-// `;
 
 const HeroSection = () => {
+  const downloadCV = () => {
+    // Create a link element
+    const link = document.createElement("a");
+    link.href = "/src/assets/doc/omar-resume-website.pdf"; // Replace with the actual path to your PDF file
+    link.setAttribute("download", "Abdullah_Al_Omar_CV.pdf"); // Set the file name
+    document.body.appendChild(link);
+    link.click();
+  };
   return (
     <Box mb={13} sx={{ position: "relative" }}>
       <Container>
@@ -84,6 +73,7 @@ const HeroSection = () => {
               sx={{
                 marginTop: 3,
               }}
+              onClick={() => downloadCV()}
             >
               Download CV
             </Button>
