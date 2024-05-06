@@ -21,49 +21,52 @@ const Skill = () => {
   return (
     <Box>
       <Container>
-        <Grid container spacing={4} columns={20}>
-          <Grid item xs={20} sm={10} md={4}>
+        <Typography sx={{ fontSize: 40, fontWeight: 600 }}>
+          My Skills
+        </Typography>
+        <Grid container spacing={4} columns={20} mt={2}>
+          <Grid item xs={10} sm={10} md={4}>
             <Tooltip title="Bootstrap" disableInteractive>
               <Image src={bootstrap} height={70} width={70} alt="bootstrap" />
             </Tooltip>
           </Grid>
 
-          <Grid item xs={20} sm={10} md={4}>
+          <Grid item xs={10} sm={10} md={4}>
             <Tooltip title="Tailwind CSS" disableInteractive>
               <Image src={tailwind} height={70} width={70} alt="bootstrap" />
             </Tooltip>
           </Grid>
-          <Grid item xs={20} sm={10} md={4}>
+          <Grid item xs={10} sm={10} md={4}>
             <Tooltip title="Material UI" disableInteractive>
               <Image src={mui} height={70} width={70} alt="bootstrap" />
             </Tooltip>
           </Grid>
-          <Grid item xs={20} sm={10} md={4}>
+          <Grid item xs={10} sm={10} md={4}>
             <Tooltip title="Javascript" disableInteractive>
               <Image src={js} height={70} width={70} alt="bootstrap" />
             </Tooltip>
           </Grid>
-          <Grid item xs={20} sm={10} md={4}>
+          <Grid item xs={10} sm={10} md={4}>
             <Tooltip title="React JS" disableInteractive>
               <Image src={react} height={70} width={70} alt="bootstrap" />
             </Tooltip>
           </Grid>
-          <Grid item xs={20} sm={10} md={4}>
+          <Grid item xs={10} sm={10} md={4}>
             <Tooltip title="Next JS" disableInteractive>
               <Image src={next} height={70} width={70} alt="bootstrap" />
             </Tooltip>
           </Grid>
-          <Grid item xs={20} sm={10} md={4}>
+          <Grid item xs={10} sm={10} md={4}>
             <Tooltip title="Node JS" disableInteractive>
               <Image src={node} height={70} width={70} alt="bootstrap" />
             </Tooltip>
           </Grid>
-          <Grid item xs={20} sm={10} md={4}>
+          <Grid item xs={10} sm={10} md={4}>
             <Tooltip title="Mongo DB" disableInteractive>
               <Image src={mongo} height={40} width={40} alt="bootstrap" />
             </Tooltip>
           </Grid>
-          <Grid item xs={20} sm={10} md={4}>
+          <Grid item xs={10} sm={10} md={4}>
             <Tooltip title="MY SQL" disableInteractive>
               <Image src={sql} height={70} width={70} alt="bootstrap" />
             </Tooltip>

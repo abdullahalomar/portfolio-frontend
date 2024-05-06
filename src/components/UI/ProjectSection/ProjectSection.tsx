@@ -15,7 +15,7 @@ export default function ProjectSection() {
         <Typography sx={{ fontSize: 40, fontWeight: 600 }}>
           Showcasing My Projects
         </Typography>
-        <Grid container spacing={2} mt={3}>
+        <Grid container spacing={3} mt={2}>
           <Grid item xs={12} md={6}>
             <Card
               sx={{
@@ -147,6 +147,7 @@ export default function ProjectSection() {
             </Card>
           </Grid>
         </Grid>
+        <Button sx={{ mt: 3 }}>View All Work</Button>
       </Container>
     </Box>
   );
