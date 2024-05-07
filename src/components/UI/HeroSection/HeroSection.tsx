@@ -6,6 +6,7 @@ import { Box, Button, Container, Typography } from "@mui/material";
 import heroImage from "@/assets/hero-img.png";
 import Image from "next/image";
 import { keyframes } from "@emotion/react";
+import ball from "@/assets/img/hero/hero-light-2.png";
 
 const bounceAnimation = keyframes`
   0% {
@@ -23,15 +24,15 @@ const HeroSection = () => {
   const downloadCV = () => {
     // Create a link element
     const link = document.createElement("a");
-    link.href = "/src/assets/doc/omar-resume-website.pdf"; // Replace with the actual path to your PDF file
-    link.setAttribute("download", "Abdullah_Al_Omar_CV.pdf"); // Set the file name
+    link.href = "/src/assets/doc/omar-resume-website.pdf";
+    link.setAttribute("download", "Abdullah_Al_Omar_CV.pdf");
     document.body.appendChild(link);
     link.click();
   };
   return (
     <Box mb={13} sx={{ position: "relative" }}>
       <Container>
-        <Box
+        {/* <Box
           sx={{
             position: "relative",
             display: {
@@ -117,9 +118,50 @@ const HeroSection = () => {
               </Typography>
             </Box>
           </Box>
+        </Box> */}
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+            pt: 10,
+          }}
+        >
+          <Typography
+            sx={{ fontSize: "45px", fontWeight: "600", textAlign: "center" }}
+          >
+            <Box component="span" color="primary.main">
+              Hi
+            </Box>
+            , I'm Abdullah Al Omar, <br />
+            Frontend Developer
+          </Typography>
+          <Image src={heroImage} alt="hero-image" height={500} width={500} />
+        </Box>
+        <Box
+          sx={{
+            animation: `${bounceAnimation} 3s infinite`,
+            position: "absolute",
+            bottom: 150,
+          }}
+        >
+          <Image src={ball} alt="hero-image" height={50} width={50} />
         </Box>
       </Container>
       <Box
+        sx={{
+          backgroundColor: "#F4F3F9",
+          width: { xs: "400px", sm: "600px", md: "500px", lg: "900px" },
+          height: { xs: "400px", sm: "600px", md: "500px", lg: "900px" },
+          borderRadius: "50%",
+          position: "absolute",
+          top: -30,
+          left: { xs: 150, sm: 250, md: 250, lg: 250 },
+          zIndex: -1,
+        }}
+      ></Box>
+      {/* <Box
         sx={{
           backgroundColor: "#5956E9",
           height: 700,
@@ -131,7 +173,7 @@ const HeroSection = () => {
           right: 0,
           zIndex: -1,
         }}
-      ></Box>
+      ></Box> */}
     </Box>
   );
 };
