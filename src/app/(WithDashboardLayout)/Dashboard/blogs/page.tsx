@@ -1,12 +1,11 @@
-import { Box } from "@mui/material";
 import React from "react";
 
-const AllBlogPage = () => {
+const BlogPage = () => {
   return (
-    <Box>
-      <h1>All Blogs</h1>
-    </Box>
+    <div>
+      <h1>this is blog page</h1>
+    </div>
   );
 };
 
-export default AllBlogPage;
+export default BlogPage;
