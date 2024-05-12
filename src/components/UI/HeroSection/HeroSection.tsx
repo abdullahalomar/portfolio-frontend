@@ -152,15 +152,25 @@ const HeroSection = () => {
       <Box
         sx={{
           backgroundColor: "#F4F3F9",
-          width: { xs: "400px", sm: "600px", md: "500px", lg: "900px" },
-          height: { xs: "400px", sm: "600px", md: "500px", lg: "900px" },
+          width: { sm: "450px", md: "600px", lg: "800px" },
+          height: { sm: "450px", md: "570px", lg: "800px" },
           borderRadius: "50%",
           position: "absolute",
-          top: -30,
-          left: { xs: 150, sm: 250, md: 250, lg: 250 },
+          top: { sm: 30, md: -10, lg: -30 },
+          left: { sm: 40, md: 100, lg: 250 },
           zIndex: -1,
         }}
       ></Box>
+      <Box
+        sx={{
+          animation: `${bounceAnimation} 6s infinite`,
+          position: "absolute",
+          right: 40,
+          top: 320,
+        }}
+      >
+        <Image src={ball} alt="hero-image" height={50} width={50} />
+      </Box>
       {/* <Box
         sx={{
           backgroundColor: "#5956E9",

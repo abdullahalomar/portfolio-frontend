@@ -43,7 +43,7 @@ const SideBar = () => {
         <ListItem disablePadding sx={{ mb: 3 }}>
           <ListItemButton>
             <Image src={skills} height={40} width={40} alt="skill" />
-            <Link className="font-extrabold ps-6" href="skills">
+            <Link className="font-extrabold ps-6" href="Dashboard/skills">
               Skills
             </Link>
           </ListItemButton>
