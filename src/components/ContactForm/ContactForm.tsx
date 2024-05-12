@@ -1,4 +1,4 @@
-import { Button, Container, Grid, Typography } from "@mui/material";
+import { Button, Container, Grid, Stack, Typography } from "@mui/material";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import telephone from "@/assets/img/itelephone.gif";
@@ -11,21 +11,14 @@ export default function ContactForm() {
         component="form"
         sx={{
           my: 11,
-          // backgroundImage: `url(${map})`,
-          // backgroundSize: "cover",
-          // backgroundRepeat: "no-repeat",
         }}
       >
-        <Box
-          sx={{
-            display: {
-              xs: "flex-wrap",
-              sm: "flex-wrap",
-              md: "flex",
-              lg: "flex",
-            },
-            justifyContent: "space-between",
-          }}
+        <Stack
+          spacing={{ xs: 1, sm: 2, md: 8 }}
+          // marginLeft={{ xs: 5, sm: 5, md: 0, lg: 0 }}
+          direction="row"
+          useFlexGap
+          flexWrap="wrap"
         >
           <Box>
             <Grid container spacing={4}>
@@ -36,7 +29,6 @@ export default function ContactForm() {
                     placeholder="Enter Your Name"
                     fullWidth
                     sx={{
-                      boxShadow: "0 1px 5px 1px rgb(175, 113, 242)",
                       borderRadius: 1,
                     }}
                   />
@@ -48,7 +40,6 @@ export default function ContactForm() {
                   placeholder="Enter Your Email"
                   fullWidth
                   sx={{
-                    boxShadow: "0 1px 5px 1px rgb(175, 113, 242)",
                     borderRadius: 1,
                   }}
                 />
@@ -61,7 +52,6 @@ export default function ContactForm() {
                   defaultValue="Enter Your Message"
                   fullWidth
                   sx={{
-                    boxShadow: "0 1px 5px 1px rgb(175, 113, 242)",
                     borderRadius: 1,
                   }}
                 />
@@ -111,7 +101,7 @@ export default function ContactForm() {
               </Box>
             </Box>
           </Box>
-        </Box>
+        </Stack>
       </Box>
     </Container>
   );

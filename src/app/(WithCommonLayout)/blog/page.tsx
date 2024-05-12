@@ -22,7 +22,13 @@ export default function BlogPage() {
         <Typography sx={{ fontSize: 40, fontWeight: 600, mb: 2 }}>
           Recent blog post
         </Typography>
-        <Stack direction="row" spacing={3}>
+        <Stack
+          spacing={{ xs: 1, sm: 2 }}
+          // marginLeft={{ xs: 5, sm: 5, md: 0, lg: 0 }}
+          direction="row"
+          useFlexGap
+          flexWrap="wrap"
+        >
           <Card variant="outlined" sx={{ maxWidth: 345 }}>
             <Image src={blogImage} height={400} width={500} alt="blog image" />
             <CardContent>
