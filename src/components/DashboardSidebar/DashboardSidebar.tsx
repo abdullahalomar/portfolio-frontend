@@ -52,7 +52,7 @@ const SideBar = () => {
         <ListItem disablePadding sx={{ mb: 3 }}>
           <ListItemButton>
             <Image src={projects} height={40} width={40} alt="skill" />
-            <Link className="font-extrabold ps-6" href="projects">
+            <Link className="font-extrabold ps-6" href="Dashboard/projects">
               Projects
             </Link>
           </ListItemButton>
@@ -60,13 +60,13 @@ const SideBar = () => {
 
         <ListItem disablePadding sx={{ mb: 3 }}>
           <ListItemButton>
-            <Image src={blogs} height={40} width={40} alt="skill" />
-            <Link className="font-extrabold ps-6" href="blogs">
+            <Image src={blogs} height={40} width={40} alt="blogs" />
+            <Link className="font-extrabold ps-6" href="Dashboard/blogs">
               Blogs
             </Link>
           </ListItemButton>
         </ListItem>
-
+        {/* 
         <ListItem disablePadding sx={{ mb: 3 }}>
           <ListItemButton>
             <Image src={experiences} height={40} width={40} alt="skill" />
@@ -74,7 +74,7 @@ const SideBar = () => {
               Experiences
             </Link>
           </ListItemButton>
-        </ListItem>
+        </ListItem> */}
       </List>
     </Box>
   );

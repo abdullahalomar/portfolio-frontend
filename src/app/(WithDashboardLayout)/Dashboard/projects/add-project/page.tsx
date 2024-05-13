@@ -7,10 +7,11 @@ import { toast } from "sonner";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import { useCreateBlogMutation } from "@/redux/api/blogApi";
+import { useCreateProjectMutation } from "@/redux/api/projectApi";
 
-const AddBlogPage = () => {
+const AddProjectPage = () => {
   const { register, handleSubmit } = useForm();
-  const [createBlog, { isLoading }] = useCreateBlogMutation();
+  const [createProject, { isLoading }] = useCreateProjectMutation();
   const [image, setImage] = useState(null);
   const router = useRouter();
 
@@ -34,11 +35,11 @@ const AddBlogPage = () => {
         imageUrl = response.data.data.url;
       }
 
-      const response = await createBlog({
+      const response = await createProject({
         ...data,
         image: imageUrl,
       }).unwrap();
-      router.push("/Dashboard/blogs");
+      router.push("/Dashboard/projects");
     } catch (error) {
       console.error("Error adding blog:", error);
       toast.error("Error adding blog");
@@ -85,7 +86,7 @@ const AddBlogPage = () => {
             disabled={isLoading}
             className="btn btn-accent btn-outline"
           >
-            {isLoading ? "Adding..." : "Add Blog"}
+            {isLoading ? "Adding..." : "Add Project"}
           </button>
         </div>
       </form>
@@ -93,4 +94,4 @@ const AddBlogPage = () => {
   );
 };
 
-export default AddBlogPage;
+export default AddProjectPage;

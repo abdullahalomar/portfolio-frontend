@@ -1,16 +1,18 @@
 "use client";
 import React, { useState } from "react";
-import { Box, Button, Grid } from "@mui/material";
+import { Box, Button } from "@mui/material";
 import { useForm } from "react-hook-form";
-
+import { useUpdateSkillMutation } from "@/redux/api/skillsApi";
 import { toast } from "sonner";
 import axios from "axios";
 import { useRouter } from "next/navigation";
-import { useCreateBlogMutation } from "@/redux/api/blogApi";
+import { useUpdateBlogMutation } from "@/redux/api/blogApi";
 
-const AddBlogPage = () => {
+const UpdateBlogPage = ({ blog, params }: any) => {
+  const id = params?.blogId;
+
   const { register, handleSubmit } = useForm();
-  const [createBlog, { isLoading }] = useCreateBlogMutation();
+  const [updateBlog, { isLoading }] = useUpdateBlogMutation();
   const [image, setImage] = useState(null);
   const router = useRouter();
 
@@ -20,6 +22,7 @@ const AddBlogPage = () => {
   };
 
   const onSubmit = async (data: any) => {
+    data.id = id;
     try {
       let imageUrl = null;
       if (image) {
@@ -34,63 +37,57 @@ const AddBlogPage = () => {
         imageUrl = response.data.data.url;
       }
 
-      const response = await createBlog({
+      const updatedData = {
         ...data,
-        image: imageUrl,
+        image: imageUrl || blog?.image,
+      };
+
+      const response = await updateBlog({
+        ...updatedData,
+        id: data.id,
+        body: data,
       }).unwrap();
       router.push("/Dashboard/blogs");
+      toast.success(response.message);
     } catch (error) {
-      console.error("Error adding blog:", error);
-      toast.error("Error adding blog");
+      console.error("Error updating Skill:", error);
+      toast.error("Error updating Skill");
     }
   };
+
   return (
     <Box>
-      <form onSubmit={handleSubmit(onSubmit)} className="card-body">
-        <div className="form-control">
-          <label className="label">
-            <span className="label-text">Title</span>
-          </label>
+      <h1>Update Skill</h1>
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <div>
+          <span>Title</span>
           <input
             type="text"
             {...register("title")}
             placeholder="Title"
-            className="input input-bordered"
-            required
+            defaultValue={blog?.title}
           />
         </div>
         <div>
+          <span>Description</span>
           <input
             type="text"
             {...register("description")}
             placeholder="Description"
-            className="input input-bordered"
-            required
+            defaultValue={blog?.description}
           />
         </div>
-
-        <div className="form-control mt-6">
-          <input
-            type="file"
-            accept="image/*"
-            onChange={handleImageChange}
-            className="input input-bordered"
-            required
-          />
+        <div>
+          <span>Image</span>
+          <input type="file" accept="image/*" onChange={handleImageChange} />
         </div>
-
-        <div className="form-control mt-6">
-          <button
-            type="submit"
-            disabled={isLoading}
-            className="btn btn-accent btn-outline"
-          >
-            {isLoading ? "Adding..." : "Add Blog"}
-          </button>
-        </div>
+        {/* Add other fields as needed */}
+        <button type="submit" disabled={isLoading}>
+          {isLoading ? "Updating..." : "Update Blog"}
+        </button>
       </form>
     </Box>
   );
 };
 
-export default AddBlogPage;
+export default UpdateBlogPage;

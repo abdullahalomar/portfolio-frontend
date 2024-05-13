@@ -2,64 +2,64 @@ import { IMeta } from "@/types";
 import { tagTypes } from "../tag-types";
 import { baseApi } from "./baseApi";
 
-const skillsApi = baseApi.injectEndpoints({
+const blogsApi = baseApi.injectEndpoints({
   endpoints: (build) => ({
-    createSkill: build.mutation({
+    createBlog: build.mutation({
       query: (data) => ({
-        url: "/skills",
+        url: "/blogs",
         method: "POST",
         data,
       }),
-      invalidatesTags: [tagTypes.skill],
+      invalidatesTags: [tagTypes.blog],
     }),
 
-    getAllSkills: build.query({
+    getAllBlogs: build.query({
       query: (arg: Record<string, any>) => ({
-        url: "/skills",
+        url: "/blogs",
         method: "GET",
         params: arg,
       }),
       transformResponse: (response: any, meta: IMeta) => {
         return {
-          skills: response,
+          blogs: response,
           meta,
         };
       },
-      providesTags: [tagTypes.skill],
+      providesTags: [tagTypes.blog],
     }),
 
-    deleteSkill: build.mutation({
+    deleteBlog: build.mutation({
       query: (id) => ({
-        url: `/skills/${id}`,
+        url: `/blogs/${id}`,
         method: "DELETE",
       }),
-      invalidatesTags: [tagTypes.skill],
+      invalidatesTags: [tagTypes.blog],
     }),
 
-    getSingleSkill: build.query({
+    getSingleBlog: build.query({
       query: (id: string | string[] | undefined) => ({
-        url: `/skills/${id}`,
+        url: `/blogs/${id}`,
         method: "GET",
       }),
 
-      providesTags: [tagTypes.skill],
+      providesTags: [tagTypes.blog],
     }),
 
-    updateSkill: build.mutation({
+    updateBlog: build.mutation({
       query: (data) => ({
-        url: `/skills/${data.id}`,
+        url: `/blogs/${data.id}`,
         method: "PUT",
         data: data.body,
       }),
-      invalidatesTags: [tagTypes.skill],
+      invalidatesTags: [tagTypes.blog],
     }),
   }),
 });
 
 export const {
-  useCreateSkillMutation,
-  useGetAllSkillsQuery,
-  useGetSingleSkillQuery,
-  useUpdateSkillMutation,
-  useDeleteSkillMutation,
-} = skillsApi;
+  useCreateBlogMutation,
+  useGetAllBlogsQuery,
+  useGetSingleBlogQuery,
+  useUpdateBlogMutation,
+  useDeleteBlogMutation,
+} = blogsApi;

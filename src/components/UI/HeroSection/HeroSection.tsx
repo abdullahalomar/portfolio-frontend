@@ -141,6 +141,29 @@ const HeroSection = () => {
         </Box>
         <Box
           sx={{
+            backgroundColor: "primary.main",
+            height: 40,
+            width: 290,
+            borderRadius: 10,
+            position: "absolute",
+            left: 560,
+            bottom: -10,
+            zIndex: 1,
+            paddingLeft: 3,
+            paddingTop: 1,
+          }}
+        >
+          <Typography
+            component="a"
+            href="mailto:abdullahalomar048@gmail.com"
+            sx={{ fontWeight: "bold", color: "white" }}
+          >
+            abdullahalomar048@gmail.com
+          </Typography>
+        </Box>
+
+        <Box
+          sx={{
             animation: `${bounceAnimation} 3s infinite`,
             position: "absolute",
             bottom: 150,

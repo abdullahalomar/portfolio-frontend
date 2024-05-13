@@ -74,14 +74,14 @@ const SkillPage = () => {
                   <TableCell>Action</TableCell>
                 </TableRow>
               </TableHead>
-              {skills.map((skill: any) => (
+              {skills?.map((skill: any) => (
                 <TableBody key={skill?._id}>
                   <TableRow
                     sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                   >
                     <TableCell>
                       <Image
-                        src={skill}
+                        src={`/${skill?.image}`}
                         height={50}
                         width={50}
                         alt="skill photo"
@@ -93,12 +93,12 @@ const SkillPage = () => {
                     </TableCell>
                     <TableCell>
                       <IconButton
-                        onClick={() => handleDelete(skill._id)}
+                        onClick={() => handleDelete(skill?._id)}
                         aria-label="delete"
                       >
                         <DeleteOutlineIcon />
                       </IconButton>
-                      <Link href={`/dashboard/admin/doctors/edit/`}>
+                      <Link href={`/Dashboard/skills/edit/${skill._id}`}>
                         <IconButton aria-label="edit">
                           <EditNoteIcon />
                         </IconButton>
