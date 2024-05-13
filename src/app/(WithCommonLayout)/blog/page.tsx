@@ -14,8 +14,11 @@ import Image from "next/image";
 
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import Link from "next/link";
+import { useGetAllBlogsQuery } from "@/redux/api/blogApi";
 
 export default function BlogPage() {
+  const { data, isLoading } = useGetAllBlogsQuery({});
+  const blogs = data?.blogs;
   return (
     <Box mt={10}>
       <Container>
@@ -29,7 +32,37 @@ export default function BlogPage() {
           useFlexGap
           flexWrap="wrap"
         >
-          <Card variant="outlined" sx={{ maxWidth: 345 }}>
+          {blogs?.map((blog: any) => (
+            <Card key={blog._id} variant="outlined" sx={{ maxWidth: 345 }}>
+              <Image
+                src={blogImage}
+                height={400}
+                width={500}
+                alt="blog image"
+              />
+              <CardContent>
+                <Box
+                  sx={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                  }}
+                >
+                  <Typography gutterBottom fontSize="20px">
+                    {blog.title}
+                  </Typography>
+                  <Typography fontSize="14px">13, May</Typography>
+                </Box>
+                <Typography fontSize="14px">{blog.description}</Typography>
+              </CardContent>
+              <CardActions sx={{ mb: 2, marginLeft: 1 }}>
+                <Typography component={Link} href="#">
+                  View Detail <ArrowForwardIcon />
+                </Typography>
+              </CardActions>
+            </Card>
+          ))}
+          {/* <Card variant="outlined" sx={{ maxWidth: 345 }}>
             <Image src={blogImage} height={400} width={500} alt="blog image" />
             <CardContent>
               <Box
@@ -54,59 +87,7 @@ export default function BlogPage() {
                 View Detail <ArrowForwardIcon />
               </Typography>
             </CardActions>
-          </Card>
-          <Card variant="outlined" sx={{ maxWidth: 345 }}>
-            <Image src={blogImage} height={400} width={500} alt="blog image" />
-            <CardContent>
-              <Box
-                sx={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  alignItems: "center",
-                }}
-              >
-                <Typography gutterBottom fontSize="20px">
-                  Tailwind
-                </Typography>
-                <Typography fontSize="14px">13, May</Typography>
-              </Box>
-              <Typography fontSize="14px">
-                Lizards are a widespread group of squamate reptiles, with over
-                6,000 species, ranging across all continents except Antarctica
-              </Typography>
-            </CardContent>
-            <CardActions sx={{ mb: 2, marginLeft: 1 }}>
-              <Typography component={Link} href="#">
-                View Detail <ArrowForwardIcon />
-              </Typography>
-            </CardActions>
-          </Card>
-          <Card variant="outlined" sx={{ maxWidth: 345 }}>
-            <Image src={blogImage} height={400} width={500} alt="blog image" />
-            <CardContent>
-              <Box
-                sx={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  alignItems: "center",
-                }}
-              >
-                <Typography gutterBottom fontSize="20px">
-                  Tailwind
-                </Typography>
-                <Typography fontSize="14px">13, May</Typography>
-              </Box>
-              <Typography fontSize="14px">
-                Lizards are a widespread group of squamate reptiles, with over
-                6,000 species, ranging across all continents except Antarctica
-              </Typography>
-            </CardContent>
-            <CardActions sx={{ mb: 2, marginLeft: 1 }}>
-              <Typography component={Link} href="#">
-                View Detail <ArrowForwardIcon />
-              </Typography>
-            </CardActions>
-          </Card>
+          </Card> */}
         </Stack>
       </Container>
     </Box>
