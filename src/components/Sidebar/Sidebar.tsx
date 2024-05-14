@@ -43,7 +43,7 @@ const actions = [
 
 const SideBar = () => {
   return (
-    <Box sx={{ backgroundColor: "secondary.main", height: "100%" }}>
+    <Box sx={{ backgroundColor: "primary.main", height: "100%" }}>
       <Stack
         sx={{
           py: 1,

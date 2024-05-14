@@ -6,7 +6,7 @@ import { tagTypesList } from "../tag-types";
 export const baseApi = createApi({
   reducerPath: "baseApi",
   baseQuery: axiosBaseQuery({
-    baseUrl: "https://portfolio-backend-red-five.vercel.app",
+    baseUrl: "https://portfolio-backend-red-five.vercel.app/api/v1",
   }),
   endpoints: () => ({}),
   tagTypes: tagTypesList,
