@@ -73,13 +73,9 @@ const AddSkill = () => {
         </div>
 
         <div className="form-control mt-6">
-          <button
-            type="submit"
-            disabled={isLoading}
-            className="btn btn-accent btn-outline"
-          >
+          <Button type="submit" disabled={isLoading}>
             {isLoading ? "Adding..." : "Add Skill"}
-          </button>
+          </Button>
         </div>
       </form>
     </Box>

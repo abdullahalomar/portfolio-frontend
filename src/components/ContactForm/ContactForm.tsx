@@ -16,12 +16,12 @@ export default function ContactForm() {
         <Stack
           spacing={{ xs: 1, sm: 2, md: 8 }}
           // marginLeft={{ xs: 5, sm: 5, md: 0, lg: 0 }}
-          direction="row"
+          direction={{ xs: "column", sm: "column", md: "row", lg: "row" }}
           useFlexGap
           flexWrap="wrap"
         >
           <Box>
-            <Grid container spacing={4}>
+            {/* <Grid container spacing={4}>
               <Grid item xs={12} md={12} lg={12}>
                 <Box>
                   <TextField
@@ -56,7 +56,7 @@ export default function ContactForm() {
                   }}
                 />
               </Grid>
-            </Grid>
+            </Grid> */}
             <Button sx={{ mt: 2 }}>Send Message</Button>
           </Box>
 

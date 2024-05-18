@@ -33,7 +33,9 @@ const DemoPaper = styled(Paper)(({ theme }) => ({
 
 const Skill = () => {
   const { data, isLoading } = useGetAllSkillsQuery({});
-  const skills = data?.skills;
+  const skills: any = data?.skills;
+  console.log(skills);
+
   return (
     <Box>
       <Container>
@@ -50,7 +52,7 @@ const Skill = () => {
           divider={<Divider orientation="vertical" flexItem />}
         >
           {skills?.map((skill: any) => (
-            <DemoPaper key={skill._id} variant="outlined">
+            <DemoPaper key={skill?._id} variant="outlined">
               <Image
                 src={`/${skill?.image}`}
                 height={70}

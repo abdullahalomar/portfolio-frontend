@@ -6,6 +6,8 @@ import Typography from "@mui/material/Typography";
 import { Container } from "@mui/material";
 
 import Slider from "@/components/Slider/Slider";
+import Carousel from "@/components/Caurosel/Caurosel";
+import Projects from "@/components/Projects/Projects";
 
 export default function ProjectSection() {
   return (
@@ -15,6 +17,8 @@ export default function ProjectSection() {
           Showcasing My Projects
         </Typography>
         <Slider />
+        {/* <Carousel /> */}
+        {/* <Projects /> */}
       </Container>
     </Box>
   );

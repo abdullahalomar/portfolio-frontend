@@ -28,7 +28,7 @@ export default function BlogPage() {
         <Stack
           spacing={{ xs: 1, sm: 2 }}
           // marginLeft={{ xs: 5, sm: 5, md: 0, lg: 0 }}
-          direction="row"
+          direction={{ xs: "column", sm: "column", md: "row", lg: "row" }}
           useFlexGap
           flexWrap="wrap"
         >

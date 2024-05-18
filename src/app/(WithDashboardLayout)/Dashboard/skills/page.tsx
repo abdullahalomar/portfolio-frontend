@@ -59,12 +59,20 @@ const SkillPage = () => {
 
   return (
     <Box>
-      <Typography component={Link} href="skills/add-skill">
+      <Typography
+        sx={{
+          backgroundColor: "#98ABEE",
+          padding: "10px 30px",
+          color: "white",
+        }}
+        component={Link}
+        href="skills/add-skill"
+      >
         Add Skill
       </Typography>
       <SkillModal open={isModalOpen} setOpen={setIsModalOpen}></SkillModal>
       <Box>
-        <Box my={2}>
+        <Box my={3}>
           <TableContainer component={Paper}>
             <Table sx={{ minWidth: 650 }} aria-label="simple table">
               <TableHead>
@@ -81,7 +89,7 @@ const SkillPage = () => {
                   >
                     <TableCell>
                       <Image
-                        src={`/${skill?.image}`}
+                        src={`/${skill?.url?.image}`}
                         height={50}
                         width={50}
                         alt="skill photo"

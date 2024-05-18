@@ -1,47 +1,36 @@
-import React, { useRef, useState } from "react";
-// Import Swiper React components
+import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/pagination";
-
 import "./Slider.css";
-
-// import required modules
 import { FreeMode, Pagination } from "swiper/modules";
-import { Box, Typography } from "@mui/material";
+import { Box, Card, CardActions, CardContent, Typography } from "@mui/material";
 import Image from "next/image";
 import mindMap from "@/assets/mind-map-Thumbnail.png";
-
-import babySparkle from "@/assets/Baby-sparkle.png";
-import clothex from "@/assets/clothex.png";
 import Link from "next/link";
 import { useGetAllProjectsQuery } from "@/redux/api/projectApi";
 
 export default function Slider() {
   const { data, isLoading } = useGetAllProjectsQuery({});
   const projects = data?.projects;
+
   return (
     <>
       <Swiper
-        slidesPerView={3}
         spaceBetween={30}
         freeMode={true}
-        pagination={{
-          clickable: true,
-        }}
+        pagination={{ clickable: true }}
         modules={[FreeMode, Pagination]}
         className="mySwiper"
       >
         {projects?.map((project: any) => (
           <SwiperSlide key={project._id}>
-            <Box sx={{ position: "relative", width: "530px", height: "220px" }}>
+            <Box sx={{ position: "relative", width: "400px", height: "220px" }}>
               <Image
                 src={mindMap}
-                height={500}
-                width={600}
+                layout="fill"
+                objectFit="cover"
                 alt="mind-map-app"
                 className="rounded"
               />

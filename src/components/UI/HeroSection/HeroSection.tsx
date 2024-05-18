@@ -31,95 +31,107 @@ const HeroSection = () => {
   };
   return (
     <Box mb={13} sx={{ position: "relative" }}>
-      <Container>
-        {/* <Box
+      {/* <Container> */}
+      <Box
+        sx={{
+          position: "relative",
+          display: {
+            xs: "flex-wrap",
+            sm: "flex-wrap",
+            md: "flex",
+            lg: "flex",
+            xl: "flex",
+          },
+          justifyContent: "space-between",
+          alignItems: "center",
+          marginTop: {
+            xs: 10,
+            sm: 0,
+            md: 0,
+            lg: 0,
+            xl: 0,
+          },
+        }}
+      >
+        <Box sx={{ marginLeft: 10 }}>
+          <Typography sx={{ fontSize: "60px", fontWeight: "bold" }}>
+            <Box component="span" sx={{ color: "primary.main" }}>
+              Hey
+            </Box>
+            , I'm Abdullah <br /> Al Omar
+          </Typography>
+
+          <Typography
+            sx={{
+              fontSize: "40px",
+              fontWeight: "semibold",
+            }}
+          >
+            Frontend Developer
+          </Typography>
+
+          <Button
+            sx={{
+              marginTop: 3,
+            }}
+            onClick={() => downloadCV()}
+          >
+            Download CV
+          </Button>
+        </Box>
+
+        <Box
           sx={{
             position: "relative",
-            display: {
-              xs: "flex-wrap",
-              sm: "flex-wrap",
-              md: "flex",
-              lg: "flex",
-              xl: "flex",
+            paddingTop: 4,
+            backgroundColor: {
+              xs: "red",
+              sm: "green",
+              md: "#7EA1FF",
+              lg: "#7EA1FF",
             },
-            justifyContent: "space-between",
-            alignItems: "center",
-            marginTop: {
-              xs: 10,
-              sm: 0,
-              md: 0,
-              lg: 0,
-              xl: 0,
-            },
+            // width: { xs: "100px" },
           }}
         >
-          <Box>
-            <Typography sx={{ fontSize: "60px", fontWeight: "bold" }}>
-              <Box component="span" sx={{ color: "primary.main" }}>
-                Hey
-              </Box>
-              , I'm Abdullah Al Omar
-            </Typography>
-
+          <Image src={heroImage} alt="hero-image" height={500} width={500} />
+          <Box
+            sx={{
+              position: "absolute",
+              height: 20,
+              width: 20,
+              borderRadius: "50%",
+              backgroundColor: "primary.main",
+              left: 100,
+              right: 30,
+              bottom: 20,
+              animation: `${bounceAnimation} 3s infinite`, // Translate the box to center it
+            }}
+          ></Box>
+          <Box
+            sx={{
+              backgroundColor: "primary.main",
+              height: 40,
+              width: 280,
+              borderRadius: 10,
+              position: "absolute",
+              right: 70,
+              bottom: -10,
+              zIndex: 1,
+              paddingLeft: 3,
+              paddingTop: 1,
+            }}
+          >
             <Typography
-              sx={{
-                fontSize: "40px",
-                fontWeight: "semibold",
-              }}
+              component="a"
+              href="mailto:abdullahalomar048@gmail.com"
+              sx={{ fontWeight: "bold", color: "white" }}
             >
-              Frontend Developer
+              abdullahalomar048@gmail.com
             </Typography>
-
-            <Button
-              sx={{
-                marginTop: 3,
-              }}
-              onClick={() => downloadCV()}
-            >
-              Download CV
-            </Button>
           </Box>
-
-          <Box sx={{ position: "relative", marginTop: 3 }}>
-            <Image src={heroImage} alt="hero-image" height={500} width={500} />
-            <Box
-              sx={{
-                position: "absolute",
-                height: 20,
-                width: 20,
-                borderRadius: "50%",
-                backgroundColor: "primary.main",
-                left: 100,
-                right: 30,
-                bottom: 20,
-                animation: `${bounceAnimation} 3s infinite`, // Translate the box to center it
-              }}
-            ></Box>
-            <Box
-              sx={{
-                backgroundColor: "primary.main",
-                height: 40,
-                width: 280,
-                borderRadius: 10,
-                position: "absolute",
-                right: 70,
-                bottom: -10,
-                zIndex: 1,
-                paddingLeft: 3,
-                paddingTop: 1,
-              }}
-            >
-              <Typography
-                component="a"
-                href="mailto:abdullahalomar048@gmail.com"
-                sx={{ fontWeight: "bold", color: "white" }}
-              >
-                abdullahalomar048@gmail.com
-              </Typography>
-            </Box>
-          </Box>
-        </Box> */}
-        <Box
+        </Box>
+      </Box>
+      {/* <Box
           sx={{
             display: "flex",
             flexDirection: "column",
@@ -146,10 +158,10 @@ const HeroSection = () => {
             width: 290,
             borderRadius: 10,
             position: "absolute",
-            left: 560,
+            left: { xs: 560, sm: 60, md: 480 },
             bottom: -10,
             zIndex: 1,
-            paddingLeft: 3,
+            paddingLeft: 4,
             paddingTop: 1,
           }}
         >
@@ -170,9 +182,9 @@ const HeroSection = () => {
           }}
         >
           <Image src={ball} alt="hero-image" height={50} width={50} />
-        </Box>
-      </Container>
-      <Box
+        </Box> */}
+      {/* </Container> */}
+      {/* <Box
         sx={{
           backgroundColor: "#F4F3F9",
           width: { sm: "450px", md: "600px", lg: "800px" },
@@ -183,7 +195,7 @@ const HeroSection = () => {
           left: { sm: 40, md: 100, lg: 250 },
           zIndex: -1,
         }}
-      ></Box>
+      ></Box> */}
       <Box
         sx={{
           animation: `${bounceAnimation} 6s infinite`,
