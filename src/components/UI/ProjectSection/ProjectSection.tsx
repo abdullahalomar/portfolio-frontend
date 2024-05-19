@@ -16,9 +16,9 @@ export default function ProjectSection() {
         <Typography sx={{ fontSize: 40, fontWeight: 600, mb: 2 }}>
           Showcasing My Projects
         </Typography>
-        <Slider />
+        {/* <Slider /> */}
         {/* <Carousel /> */}
-        {/* <Projects /> */}
+        <Projects />
       </Container>
     </Box>
   );

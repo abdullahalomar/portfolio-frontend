@@ -26,17 +26,17 @@ export default function BlogPage() {
           Recent blog post
         </Typography>
         <Stack
-          spacing={{ xs: 1, sm: 2 }}
+          spacing={{ xs: 1, sm: 2, md: 6 }}
           // marginLeft={{ xs: 5, sm: 5, md: 0, lg: 0 }}
           direction={{ xs: "column", sm: "column", md: "row", lg: "row" }}
           useFlexGap
           flexWrap="wrap"
         >
-          {blogs?.map((blog: any) => (
-            <Card key={blog._id} variant="outlined" sx={{ maxWidth: 345 }}>
+          {blogs?.slice(0, 2).map((blog: any) => (
+            <Card key={blog._id} variant="outlined" sx={{ maxWidth: 500 }}>
               <Image
                 src={blogImage}
-                height={400}
+                height={300}
                 width={500}
                 alt="blog image"
               />

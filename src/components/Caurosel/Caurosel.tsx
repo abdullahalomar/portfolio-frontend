@@ -49,31 +49,11 @@ function Carousel() {
   };
 
   return (
-    <Box component="div" className="slider-container">
+    <Box className="slider-container">
       <Slider {...settings}>
         {projects?.map((project: any, index: number) => (
           <Card key={project._id} variant="outlined" sx={{ maxWidth: 345 }}>
             <Image src={mindMap} height={400} width={500} alt="blog image" />
-            <CardContent>
-              <Box
-                sx={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  alignItems: "center",
-                }}
-              >
-                <Typography gutterBottom fontSize="20px">
-                  {project.title}
-                </Typography>
-                <Typography fontSize="14px">13, May</Typography>
-              </Box>
-              <Typography fontSize="14px">{project.description}</Typography>
-            </CardContent>
-            <CardActions sx={{ mb: 2, marginLeft: 1 }}>
-              <Typography component={Link} href="#">
-                View Detail
-              </Typography>
-            </CardActions>
           </Card>
         ))}
       </Slider>

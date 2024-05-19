@@ -34,7 +34,7 @@ const DemoPaper = styled(Paper)(({ theme }) => ({
 const Skill = () => {
   const { data, isLoading } = useGetAllSkillsQuery({});
   const skills: any = data?.skills;
-  console.log(skills);
+  // console.log(skills);
 
   return (
     <Box>
@@ -61,28 +61,6 @@ const Skill = () => {
               />
             </DemoPaper>
           ))}
-
-          {/* <DemoPaper variant="outlined">
-            <Image src={mui} height={70} width={90} alt="bootstrap" />
-          </DemoPaper>
-          <DemoPaper variant="outlined">
-            <Image src={js} height={70} width={90} alt="bootstrap" />
-          </DemoPaper>
-          <DemoPaper variant="outlined">
-            <Image src={react} height={70} width={90} alt="bootstrap" />
-          </DemoPaper>
-          <DemoPaper variant="outlined">
-            <Image src={next} height={70} width={90} alt="bootstrap" />
-          </DemoPaper>
-          <DemoPaper variant="outlined">
-            <Image src={node} height={70} width={90} alt="bootstrap" />
-          </DemoPaper>
-          <DemoPaper variant="outlined">
-            <Image src={mongo} height={4} width={40} alt="bootstrap" />
-          </DemoPaper>
-          <DemoPaper variant="outlined">
-            <Image src={sql} height={70} width={90} alt="bootstrap" />
-          </DemoPaper> */}
         </Stack>
       </Container>
     </Box>

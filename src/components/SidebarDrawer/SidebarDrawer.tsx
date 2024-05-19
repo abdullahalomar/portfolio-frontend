@@ -11,7 +11,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import SideBar from "../Sidebar/Sidebar";
 
-const drawerWidth = 170;
+const drawerWidth = 180;
 
 export default function SidebarDrawer({
   children,

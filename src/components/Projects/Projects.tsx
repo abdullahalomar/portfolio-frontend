@@ -1,4 +1,12 @@
-import { Box, Typography, Grid } from "@mui/material";
+import {
+  Box,
+  Typography,
+  Grid,
+  Card,
+  CardContent,
+  CardActions,
+  Stack,
+} from "@mui/material";
 import Image from "next/image";
 import mindMap from "@/assets/mind-map-Thumbnail.png";
 import Link from "next/link";
@@ -9,10 +17,19 @@ const Projects = () => {
   const projects = data?.projects;
 
   return (
-    <Grid container spacing={2}>
-      {projects?.map((project: any) => (
-        <Grid key={project._id} item xs={12} md={3}>
-          <Box sx={{ position: "relative", width: "100%", height: "220px" }}>
+    <>
+      <Stack
+        spacing={{ xs: 1, sm: 2 }}
+        // marginLeft={{ xs: 5, sm: 5, md: 0, lg: 0 }}
+        direction={{ xs: "column", sm: "column", md: "row", lg: "row" }}
+        useFlexGap
+        flexWrap="wrap"
+      >
+        {projects?.map((project: any) => (
+          <Box
+            key={project._id}
+            sx={{ position: "relative", width: "400px", height: "220px" }}
+          >
             <Image
               src={mindMap}
               layout="fill"
@@ -54,9 +71,11 @@ const Projects = () => {
                   marginRight: 2,
                 }}
               >
-                <Typography sx={{ color: "black" }}>title</Typography>
+                <Typography sx={{ color: "black" }}>
+                  {project?.title}
+                </Typography>
                 <Typography sx={{ color: "black", fontSize: "11px" }}>
-                  description
+                  {project?.description}
                 </Typography>
               </Box>
               <Typography
@@ -73,9 +92,9 @@ const Projects = () => {
               </Typography>
             </Box>
           </Box>
-        </Grid>
-      ))}
-    </Grid>
+        ))}
+      </Stack>
+    </>
   );
 };
 

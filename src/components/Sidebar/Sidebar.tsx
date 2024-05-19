@@ -18,6 +18,9 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import Image from "next/image";
 import logo from "@/assets/cartoon-logo-1.png";
 
+import about from "@/assets/img/about-me.png";
+import blogs from "@/assets/img/dashboard-icons/blog.png";
+
 const actions = [
   {
     icon: <FacebookIcon />,
@@ -43,10 +46,10 @@ const actions = [
 
 const SideBar = () => {
   return (
-    <Box sx={{ backgroundColor: "primary.main", height: "100%" }}>
+    <Box>
       <Stack
         sx={{
-          py: 1,
+          py: 3,
           mt: 1,
         }}
         direction="row"
@@ -62,7 +65,7 @@ const SideBar = () => {
         </Typography> */}
       </Stack>
 
-      <Box>
+      {/* <Box>
         <List>
           <ListItem>
             <ListItemButton>
@@ -92,7 +95,27 @@ const SideBar = () => {
             </ListItemButton>
           </ListItem>
         </List>
-      </Box>
+      </Box> */}
+
+      <List>
+        <ListItem disablePadding sx={{ mb: 3 }}>
+          <ListItemButton>
+            <Image src={about} height={40} width={40} alt="skill" />
+            <Link className="font-extrabold ps-4" href="/about">
+              About
+            </Link>
+          </ListItemButton>
+        </ListItem>
+
+        <ListItem disablePadding sx={{ mb: 3 }}>
+          <ListItemButton>
+            <Image src={blogs} height={40} width={40} alt="blogs" />
+            <Link className="font-extrabold ps-4" href="/blog">
+              Blog
+            </Link>
+          </ListItemButton>
+        </ListItem>
+      </List>
 
       <Box sx={{ height: 320, transform: "translateZ(0px)", flexGrow: 1 }}>
         <SpeedDial
