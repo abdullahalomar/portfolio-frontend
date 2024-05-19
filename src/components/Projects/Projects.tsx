@@ -25,10 +25,10 @@ const Projects = () => {
         useFlexGap
         flexWrap="wrap"
       >
-        {projects?.map((project: any) => (
+        {projects?.slice(0, 3).map((project: any) => (
           <Box
             key={project._id}
-            sx={{ position: "relative", width: "400px", height: "220px" }}
+            sx={{ position: "relative", width: "340px", height: "220px" }}
           >
             <Image
               src={mindMap}
@@ -94,6 +94,13 @@ const Projects = () => {
           </Box>
         ))}
       </Stack>
+      <Typography
+        sx={{ fontSize: "20px", marginTop: "10px" }}
+        component={Link}
+        href="#"
+      >
+        More Project
+      </Typography>
     </>
   );
 };
