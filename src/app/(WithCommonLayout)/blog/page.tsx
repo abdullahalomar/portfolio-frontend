@@ -19,6 +19,8 @@ import { useGetAllBlogsQuery } from "@/redux/api/blogApi";
 export default function BlogPage() {
   const { data, isLoading } = useGetAllBlogsQuery({});
   const blogs = data?.blogs;
+  // console.log(blogs);
+
   return (
     <Box mt={10}>
       <Container>
@@ -35,7 +37,7 @@ export default function BlogPage() {
           {blogs?.slice(0, 2).map((blog: any) => (
             <Card key={blog._id} variant="outlined" sx={{ maxWidth: 500 }}>
               <Image
-                src={blogImage}
+                src={blog?.image}
                 height={300}
                 width={500}
                 alt="blog image"

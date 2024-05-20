@@ -54,10 +54,10 @@ const Skill = () => {
           {skills?.map((skill: any) => (
             <DemoPaper key={skill?._id} variant="outlined">
               <Image
-                src={`/${skill?.image}`}
+                src={skill?.image}
                 height={70}
                 width={90}
-                alt="bootstrap"
+                alt="skill image"
               />
             </DemoPaper>
           ))}
