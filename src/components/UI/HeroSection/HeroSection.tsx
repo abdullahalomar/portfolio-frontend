@@ -84,12 +84,8 @@ const HeroSection = () => {
           sx={{
             position: "relative",
             paddingTop: 4,
-            backgroundColor: {
-              xs: "red",
-              sm: "green",
-              md: "#7EA1FF",
-              lg: "#7EA1FF",
-            },
+            backgroundColor: "#7EA1FF",
+
             // width: { xs: "100px" },
           }}
         >
