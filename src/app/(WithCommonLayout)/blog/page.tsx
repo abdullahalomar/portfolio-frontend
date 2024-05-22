@@ -36,7 +36,7 @@ export default function BlogPage() {
               sx={{ maxWidth: 360, width: 300, borderRadius: 4 }}
             >
               <Image
-                src={blogImage}
+                src={blog?.image}
                 width={400}
                 height={300}
                 alt="blog-image"
