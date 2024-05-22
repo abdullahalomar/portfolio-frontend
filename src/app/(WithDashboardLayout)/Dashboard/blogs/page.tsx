@@ -57,6 +57,7 @@ const BlogPage = () => {
       console.error(error.message);
     }
   };
+  console.log(blogs);
 
   return (
     <Box>
@@ -83,7 +84,7 @@ const BlogPage = () => {
                   >
                     <TableCell>
                       <Image
-                        src={`/${blog?.image}`}
+                        src={blog?.image}
                         height={50}
                         width={50}
                         alt="skill photo"
@@ -95,7 +96,11 @@ const BlogPage = () => {
                     </TableCell>
                     <TableCell>
                       {" "}
-                      <Typography>{blog?.description}</Typography>
+                      <Typography>
+                        {blog.description.length > 170
+                          ? `${blog.description.substring(0, 170)}...`
+                          : blog.description}
+                      </Typography>
                     </TableCell>
                     <TableCell>
                       <IconButton
@@ -104,7 +109,7 @@ const BlogPage = () => {
                       >
                         <DeleteOutlineIcon />
                       </IconButton>
-                      <Link href={`/Dashboard/blogs/edit/${blog._id}`}>
+                      <Link href={`/Dashboard/blogs/edit/${blog?._id}`}>
                         <IconButton aria-label="edit">
                           <EditNoteIcon />
                         </IconButton>

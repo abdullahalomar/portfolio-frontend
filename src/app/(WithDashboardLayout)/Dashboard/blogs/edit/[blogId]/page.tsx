@@ -1,8 +1,7 @@
 "use client";
 import React, { useState } from "react";
-import { Box, Button } from "@mui/material";
+import { Box } from "@mui/material";
 import { useForm } from "react-hook-form";
-import { useUpdateSkillMutation } from "@/redux/api/skillsApi";
 import { toast } from "sonner";
 import axios from "axios";
 import { useRouter } from "next/navigation";

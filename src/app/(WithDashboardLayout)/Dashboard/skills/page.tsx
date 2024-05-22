@@ -89,7 +89,7 @@ const SkillPage = () => {
                   >
                     <TableCell>
                       <Image
-                        src={`/${skill?.url?.image}`}
+                        src={skill?.image}
                         height={50}
                         width={50}
                         alt="skill photo"
