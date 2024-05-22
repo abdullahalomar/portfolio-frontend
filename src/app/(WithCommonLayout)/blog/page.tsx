@@ -17,7 +17,7 @@ export default function BlogPage() {
   // console.log(blogs);
 
   return (
-    <Box mt={10} sx={{ marginLeft: 8 }}>
+    <Box mt={10}>
       <Container>
         <Typography sx={{ fontSize: 40, fontWeight: 600, mb: 2 }}>
           Recent blog post
@@ -51,7 +51,7 @@ export default function BlogPage() {
                     {blog?.title}
                   </Typography>
                   <Typography gutterBottom variant="h6" component="div">
-                    13, May
+                    13, may
                   </Typography>
                 </Stack>
                 <Typography color="text.secondary" variant="body2">

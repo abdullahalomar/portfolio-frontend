@@ -19,3 +19,13 @@ export type IGenericErrorResponse = {
   message: string;
   errorMessages: IGenericErrorMessage[];
 };
+
+export interface Blog {
+  id: string;
+  title: string;
+  description: string;
+  publish_date: string;
+  image: string;
+  link: string;
+  total_likes: string;
+}

@@ -37,7 +37,7 @@ const Skill = () => {
   // console.log(skills);
 
   return (
-    <Box sx={{ marginLeft: 8 }}>
+    <Box>
       <Container>
         <Typography sx={{ fontSize: 40, fontWeight: 600 }}>
           My Skills
