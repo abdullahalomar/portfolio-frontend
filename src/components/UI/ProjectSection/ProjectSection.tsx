@@ -12,7 +12,7 @@ import Projects from "@/components/Projects/Projects";
 
 export default function ProjectSection() {
   return (
-    <Box mt={10}>
+    <Box mt={10} sx={{ marginLeft: 8 }}>
       <Container>
         <Typography sx={{ fontSize: 40, fontWeight: 600, mb: 2 }}>
           Showcasing My Projects

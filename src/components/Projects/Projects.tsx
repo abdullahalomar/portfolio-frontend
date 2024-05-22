@@ -118,71 +118,89 @@ import Image from "next/image";
 import online from "@/assets/img/online.png";
 import Link from "next/link";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
+import { useGetAllProjectsQuery } from "@/redux/api/projectApi";
 
 export default function IntroDivider() {
+  const { data, isLoading } = useGetAllProjectsQuery({});
+  const projects = data?.projects;
   return (
-    <Card
-      variant="outlined"
-      sx={{ maxWidth: 300, height: 315, borderRadius: 8 }}
+    <Stack
+      spacing={{ xs: 1, sm: 2, md: 6 }}
+      // marginLeft={{ xs: 5, sm: 5, md: 0, lg: 0 }}
+      direction={{ xs: "column", sm: "column", md: "row", lg: "row" }}
+      useFlexGap
+      flexWrap="wrap"
     >
-      <Box sx={{ p: 2 }}>
-        <Stack
-          direction="row"
-          justifyContent="space-between"
-          alignItems="center"
-          mb={2}
+      {projects?.slice(0, 6).map((project: any) => (
+        <Card
+          key={project._id}
+          variant="outlined"
+          sx={{ width: 300, borderRadius: 8 }}
         >
-          <Typography gutterBottom variant="h5" component="div">
-            Baby Sparkle
-          </Typography>
-          <Box sx={{ borderRadius: "100%", width: "50px" }}>
-            <Image src={online} height={300} width={400} alt="online image" />
-          </Box>
-        </Stack>
-        <Typography color="text.secondary" variant="body2">
-          Pinstriped cornflower blue cotton blouse takes you on a walk to the
-          park or just down the hall.
-        </Typography>
-      </Box>
-      <Divider />
-      <Box sx={{ p: 2 }}>
-        <Typography gutterBottom color="text.secondary" variant="body2">
-          Category: ecommerce
-        </Typography>
-        <Typography gutterBottom color="text.secondary" variant="body2">
-          Technology: nextJS
-        </Typography>
-        <Stack
-          mt={5}
-          direction="row"
-          justifyContent="space-between"
-          spacing={1}
-        >
-          <Typography
-            component={Link}
-            href="#"
-            sx={{
-              padding: "2px 7px",
-              backgroundColor: "#B7C9F2",
-              borderRadius: 3,
-              fontSize: "14px",
-              color: "white",
-            }}
-          >
-            View
-          </Typography>
-          <Box sx={{ display: "flex", alignItems: "center" }}>
-            <Typography
-              sx={{ color: "primary.main" }}
-              component={Link}
-              href="#"
+          <Box sx={{ p: 2 }}>
+            <Stack
+              direction="row"
+              justifyContent="space-between"
+              alignItems="center"
+              mb={2}
             >
-              Details
+              <Typography gutterBottom variant="h5" component="div">
+                {project.title}
+              </Typography>
+              <Box sx={{ borderRadius: "100%", width: "50px" }}>
+                <Image
+                  src={online}
+                  height={300}
+                  width={400}
+                  alt="online image"
+                />
+              </Box>
+            </Stack>
+            <Typography color="text.secondary" variant="body2">
+              {project.description}
             </Typography>
-            <KeyboardArrowRightIcon htmlColor="#7EA1FF" />
           </Box>
-        </Stack>
-      </Box>
-    </Card>
+          <Divider />
+          <Box sx={{ p: 2 }}>
+            <Typography gutterBottom color="text.secondary" variant="body2">
+              Category: {project.category}
+            </Typography>
+            <Typography gutterBottom color="text.secondary" variant="body2">
+              Technology: {project.technology}
+            </Typography>
+            <Stack
+              mt={5}
+              direction="row"
+              justifyContent="space-between"
+              spacing={1}
+            >
+              <Typography
+                component={Link}
+                href={`${project.link}`}
+                sx={{
+                  padding: "2px 7px",
+                  backgroundColor: "#B7C9F2",
+                  borderRadius: 3,
+                  fontSize: "14px",
+                  color: "white",
+                }}
+              >
+                View
+              </Typography>
+              <Box sx={{ display: "flex", alignItems: "center" }}>
+                <Typography
+                  sx={{ color: "primary.main" }}
+                  component={Link}
+                  href="#"
+                >
+                  Details
+                </Typography>
+                <KeyboardArrowRightIcon htmlColor="#7EA1FF" />
+              </Box>
+            </Stack>
+          </Box>
+        </Card>
+      ))}
+    </Stack>
   );
 }

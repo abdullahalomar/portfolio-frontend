@@ -127,71 +127,7 @@ const HeroSection = () => {
           </Box>
         </Box>
       </Box>
-      {/* <Box
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-            pt: 10,
-          }}
-        >
-          <Typography
-            sx={{ fontSize: "45px", fontWeight: "600", textAlign: "center" }}
-          >
-            <Box component="span" color="primary.main">
-              Hi
-            </Box>
-            , I'm Abdullah Al Omar, <br />
-            Frontend Developer
-          </Typography>
-          <Image src={heroImage} alt="hero-image" height={500} width={500} />
-        </Box>
-        <Box
-          sx={{
-            backgroundColor: "primary.main",
-            height: 40,
-            width: 290,
-            borderRadius: 10,
-            position: "absolute",
-            left: { xs: 560, sm: 60, md: 480 },
-            bottom: -10,
-            zIndex: 1,
-            paddingLeft: 4,
-            paddingTop: 1,
-          }}
-        >
-          <Typography
-            component="a"
-            href="mailto:abdullahalomar048@gmail.com"
-            sx={{ fontWeight: "bold", color: "white" }}
-          >
-            abdullahalomar048@gmail.com
-          </Typography>
-        </Box>
 
-        <Box
-          sx={{
-            animation: `${bounceAnimation} 3s infinite`,
-            position: "absolute",
-            bottom: 150,
-          }}
-        >
-          <Image src={ball} alt="hero-image" height={50} width={50} />
-        </Box> */}
-      {/* </Container> */}
-      {/* <Box
-        sx={{
-          backgroundColor: "#F4F3F9",
-          width: { sm: "450px", md: "600px", lg: "800px" },
-          height: { sm: "450px", md: "570px", lg: "800px" },
-          borderRadius: "50%",
-          position: "absolute",
-          top: { sm: 30, md: -10, lg: -30 },
-          left: { sm: 40, md: 100, lg: 250 },
-          zIndex: -1,
-        }}
-      ></Box> */}
       <Box
         sx={{
           animation: `${bounceAnimation} 6s infinite`,
@@ -202,19 +138,6 @@ const HeroSection = () => {
       >
         <Image src={ball} alt="hero-image" height={50} width={50} />
       </Box>
-      {/* <Box
-        sx={{
-          backgroundColor: "#5956E9",
-          height: 700,
-          width: 290,
-          borderTopLeftRadius: "500px",
-          borderBottomLeftRadius: "500px",
-          position: "absolute",
-          top: -20,
-          right: 0,
-          zIndex: -1,
-        }}
-      ></Box> */}
     </Box>
   );
 };
