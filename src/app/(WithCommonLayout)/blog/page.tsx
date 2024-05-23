@@ -63,9 +63,13 @@ export default function BlogPage() {
 
               <Box sx={{ p: 2 }}>
                 <Stack direction="row" spacing={1}>
-                  <Link href={`blog/${blog._id}`}>
-                    View Detail <ArrowForwardIcon />
-                  </Link>
+                  <Typography
+                    color="primary.main"
+                    component={Link}
+                    href={`blog/${blog._id}`}
+                  >
+                    Read more <ArrowForwardIcon />
+                  </Typography>
                 </Stack>
               </Box>
             </Card>

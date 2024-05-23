@@ -179,7 +179,7 @@ export default function IntroDivider() {
                 href={`${project.link}`}
                 sx={{
                   padding: "2px 7px",
-                  backgroundColor: "#B7C9F2",
+                  backgroundColor: "#8B93FF",
                   borderRadius: 3,
                   fontSize: "14px",
                   color: "white",
