@@ -3,25 +3,32 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import telephone from "@/assets/img/itelephone.gif";
 import Image from "next/image";
+import map from "@/assets/img/map-light.png";
 
 export default function ContactForm() {
   return (
-    <Container>
-      <Box
-        component="form"
-        sx={{
-          my: 11,
-        }}
-      >
+    <Box
+      component="form"
+      sx={{
+        mt: 10,
+        backgroundImage: `url(${map.src})`,
+        backgroundColor: "#7469B6", //#7EA1FF #7469B6
+        backgroundBlendMode: "overlay",
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center",
+        padding: "20px",
+      }}
+    >
+      <Container>
         <Stack
           spacing={{ xs: 1, sm: 2, md: 8 }}
-          // marginLeft={{ xs: 5, sm: 5, md: 0, lg: 0 }}
           direction={{ xs: "column", sm: "column", md: "row", lg: "row" }}
           useFlexGap
           flexWrap="wrap"
         >
           <Box>
-            {/* <Grid container spacing={4}>
+            <Grid container spacing={4}>
               <Grid item xs={12} md={12} lg={12}>
                 <Box>
                   <TextField
@@ -36,7 +43,7 @@ export default function ContactForm() {
               </Grid>
               <Grid item xs={12} md={12} lg={12}>
                 <TextField
-                  label="email"
+                  label="Email"
                   placeholder="Enter Your Email"
                   fullWidth
                   sx={{
@@ -56,13 +63,13 @@ export default function ContactForm() {
                   }}
                 />
               </Grid>
-            </Grid> */}
+            </Grid>
             <Button sx={{ mt: 2 }}>Send Message</Button>
           </Box>
 
           <Box>
             <Box>
-              <Typography color="black" fontSize="60px" fontWeight="600" mb={2}>
+              <Typography color="white" fontSize="60px" fontWeight="600" mb={2}>
                 Let’s Talk...
               </Typography>
             </Box>
@@ -81,6 +88,7 @@ export default function ContactForm() {
                       fontSize: "30px",
                       fontWeight: "600",
                       marginLeft: "5px",
+                      color: "white",
                     }}
                   >
                     +88 01643990060
@@ -88,21 +96,29 @@ export default function ContactForm() {
                 </Box>
               </Box>
               <Box my={3}>
-                <Typography sx={{ fontSize: "20px", fontWeight: "600" }}>
+                <Typography
+                  sx={{ fontSize: "20px", fontWeight: "600", color: "white" }}
+                >
                   Mail Address
                 </Typography>
-                <Typography>abdullahalomar048@gmail.com</Typography>
+                <Typography sx={{ color: "white" }}>
+                  abdullahalomar048@gmail.com
+                </Typography>
               </Box>
               <Box>
-                <Typography sx={{ fontSize: "20px", fontWeight: "600" }}>
+                <Typography
+                  sx={{ fontSize: "20px", fontWeight: "600", color: "white" }}
+                >
                   Location
                 </Typography>
-                <Typography>Dhaka, Bangladesh</Typography>
+                <Typography sx={{ color: "white" }}>
+                  Dhaka, Bangladesh
+                </Typography>
               </Box>
             </Box>
           </Box>
         </Stack>
-      </Box>
-    </Container>
+      </Container>
+    </Box>
   );
 }

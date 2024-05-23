@@ -7,15 +7,15 @@ import ProjectPage from "./project/page";
 
 const HomePage = () => {
   return (
-    <>
+    <Box>
       <HeroSection />
       <Box marginLeft={5}>
         <Skill />
         <ProjectPage />
         <BlogPage />
-        <ContactForm />
       </Box>
-    </>
+      <ContactForm />
+    </Box>
   );
 };
 

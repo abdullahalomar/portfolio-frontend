@@ -2,11 +2,12 @@
 
 "use client";
 
-import { Box, Button, Container, Typography } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import heroImage from "@/assets/hero-img.png";
 import Image from "next/image";
 import { keyframes } from "@emotion/react";
 import ball from "@/assets/img/hero/hero-light-2.png";
+import bg from "@/assets/img/map-light.png";
 
 const bounceAnimation = keyframes`
   0% {
@@ -83,13 +84,28 @@ const HeroSection = () => {
         <Box
           sx={{
             position: "relative",
-            paddingTop: 4,
-            backgroundColor: "#7EA1FF",
-
-            // width: { xs: "100px" },
+            paddingTop: 2,
+            backgroundImage: `url(${bg.src})`,
+            backgroundBlendMode: "overlay",
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "center",
+            backgroundColor: {
+              xs: "#928abf",
+              sm: "red",
+              md: "green",
+              lg: "#928abf",
+            },
           }}
         >
-          <Image src={heroImage} alt="hero-image" height={500} width={500} />
+          <Box
+            sx={{
+              marginLeft: { xs: "30px", sm: "50px" },
+              marginRight: { md: "20px", lg: "20px" },
+            }}
+          >
+            <Image src={heroImage} alt="hero-image" height={500} width={500} />
+          </Box>
           <Box
             sx={{
               position: "absolute",
@@ -103,7 +119,7 @@ const HeroSection = () => {
               animation: `${bounceAnimation} 3s infinite`, // Translate the box to center it
             }}
           ></Box>
-          <Box
+          {/* <Box
             sx={{
               backgroundColor: "primary.main",
               height: 40,
@@ -115,6 +131,7 @@ const HeroSection = () => {
               zIndex: 1,
               paddingLeft: 3,
               paddingTop: 1,
+              opacity: 0.4,
             }}
           >
             <Typography
@@ -124,7 +141,7 @@ const HeroSection = () => {
             >
               abdullahalomar048@gmail.com
             </Typography>
-          </Box>
+          </Box> */}
         </Box>
       </Box>
 
