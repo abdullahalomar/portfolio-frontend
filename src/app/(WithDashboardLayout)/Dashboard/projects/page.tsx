@@ -59,7 +59,15 @@ const ProjectPage = () => {
 
   return (
     <Box>
-      <Typography component={Link} href="projects/add-project">
+      <Typography
+        sx={{
+          backgroundColor: "#98ABEE",
+          padding: "10px 30px",
+          color: "white",
+        }}
+        component={Link}
+        href="projects/add-project"
+      >
         Add Project
       </Typography>
 
@@ -69,9 +77,11 @@ const ProjectPage = () => {
             <Table sx={{ minWidth: 650 }} aria-label="simple table">
               <TableHead>
                 <TableRow>
-                  <TableCell>Photo</TableCell>
                   <TableCell>Title</TableCell>
                   <TableCell>Description</TableCell>
+                  <TableCell>Category</TableCell>
+                  <TableCell>Technology</TableCell>
+                  <TableCell>Link</TableCell>
                   <TableCell>Action</TableCell>
                 </TableRow>
               </TableHead>
@@ -81,20 +91,24 @@ const ProjectPage = () => {
                     sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                   >
                     <TableCell>
-                      <Image
-                        src={`/${project?.image}`}
-                        height={50}
-                        width={50}
-                        alt="skill photo"
-                      />
-                    </TableCell>
-                    <TableCell>
                       {" "}
                       <Typography>{project?.title}</Typography>
                     </TableCell>
                     <TableCell>
                       {" "}
                       <Typography>{project?.description}</Typography>
+                    </TableCell>
+                    <TableCell>
+                      {" "}
+                      <Typography>{project?.category}</Typography>
+                    </TableCell>
+                    <TableCell>
+                      {" "}
+                      <Typography>{project?.technology}</Typography>
+                    </TableCell>
+                    <TableCell>
+                      {" "}
+                      <Typography>{project?.link}</Typography>
                     </TableCell>
                     <TableCell>
                       <IconButton

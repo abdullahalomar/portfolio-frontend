@@ -7,6 +7,7 @@ export const baseApi = createApi({
   reducerPath: "baseApi",
   baseQuery: axiosBaseQuery({
     baseUrl: "https://portfolio-backend-red-five.vercel.app/api/v1",
+    // baseUrl: "http://localhost:5000/api/v1",
   }),
   endpoints: () => ({}),
   tagTypes: tagTypesList,

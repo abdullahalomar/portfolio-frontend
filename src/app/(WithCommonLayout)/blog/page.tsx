@@ -4,7 +4,6 @@
 import Card from "@mui/material/Card";
 import Typography from "@mui/material/Typography";
 import { Box, Container, Stack } from "@mui/material";
-import blogImage from "@/assets/mind-map-Thumbnail.png";
 import Image from "next/image";
 
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";

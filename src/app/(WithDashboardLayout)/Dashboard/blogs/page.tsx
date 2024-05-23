@@ -61,7 +61,15 @@ const BlogPage = () => {
 
   return (
     <Box>
-      <Typography component={Link} href="blogs/add-blog">
+      <Typography
+        sx={{
+          backgroundColor: "#98ABEE",
+          padding: "10px 30px",
+          color: "white",
+        }}
+        component={Link}
+        href="blogs/add-blog"
+      >
         Add Blog
       </Typography>
 

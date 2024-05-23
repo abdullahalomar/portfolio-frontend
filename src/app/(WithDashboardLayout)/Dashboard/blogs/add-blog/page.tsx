@@ -1,12 +1,25 @@
 "use client";
 import React, { useState } from "react";
-import { Box, Button, Grid } from "@mui/material";
+import { Box, Button, Grid, TextField, styled } from "@mui/material";
 import { useForm } from "react-hook-form";
 
 import { toast } from "sonner";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import { useCreateBlogMutation } from "@/redux/api/blogApi";
+import CloudUploadIcon from "@mui/icons-material/CloudUpload";
+
+const VisuallyHiddenInput = styled("input")({
+  clip: "rect(0 0 0 0)",
+  clipPath: "inset(50%)",
+  height: 1,
+  overflow: "hidden",
+  position: "absolute",
+  bottom: 0,
+  left: 0,
+  whiteSpace: "nowrap",
+  width: 1,
+});
 
 const AddBlogPage = () => {
   const { register, handleSubmit } = useForm();
@@ -47,29 +60,53 @@ const AddBlogPage = () => {
   return (
     <Box>
       <form onSubmit={handleSubmit(onSubmit)} className="card-body">
-        <div className="form-control">
-          <label className="label">
-            <span className="label-text">Title</span>
-          </label>
-          <input
-            type="text"
-            {...register("title")}
-            placeholder="Title"
-            className="input input-bordered"
-            required
-          />
-        </div>
-        <div>
-          <input
-            type="text"
-            {...register("description")}
-            placeholder="Description"
-            className="input input-bordered"
-            required
-          />
-        </div>
+        <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+          <Grid item xs={12} sm={12} md={6} lg={6}>
+            <Box>
+              <TextField
+                id="outlined-basic"
+                label="Title"
+                variant="outlined"
+                type="text"
+                {...register("title")}
+                placeholder="Title"
+                required
+                fullWidth
+              />
+            </Box>
+          </Grid>
+          <Grid item xs={12} sm={12} md={6} lg={6}>
+            <Box>
+              <TextField
+                id="outlined-basic"
+                label="Description"
+                variant="outlined"
+                type="text"
+                {...register("description")}
+                placeholder="Description"
+                required
+                fullWidth
+                minRows={20}
+              />
+            </Box>
+          </Grid>
+          <Grid item xs={12} sm={12} md={6} lg={6}>
+            <Button
+              component="label"
+              role={undefined}
+              variant="contained"
+              tabIndex={-1}
+              startIcon={<CloudUploadIcon />}
+              onChange={handleImageChange}
+              fullWidth
+            >
+              Upload file
+              <VisuallyHiddenInput type="file" />
+            </Button>
+          </Grid>
+        </Grid>
 
-        <div className="form-control mt-6">
+        {/* <div className="form-control mt-6">
           <input
             type="file"
             accept="image/*"
@@ -77,17 +114,13 @@ const AddBlogPage = () => {
             className="input input-bordered"
             required
           />
-        </div>
+        </div> */}
 
-        <div className="form-control mt-6">
-          <button
-            type="submit"
-            disabled={isLoading}
-            className="btn btn-accent btn-outline"
-          >
+        <Box mt={3}>
+          <Button type="submit" disabled={isLoading}>
             {isLoading ? "Adding..." : "Add Blog"}
-          </button>
-        </div>
+          </Button>
+        </Box>
       </form>
     </Box>
   );

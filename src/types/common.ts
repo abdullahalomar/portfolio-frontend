@@ -29,3 +29,12 @@ export interface Blog {
   link: string;
   total_likes: string;
 }
+
+export interface Project {
+  id: string;
+  title: string;
+  description: string;
+  category: string;
+  technology: string;
+  link: string;
+}

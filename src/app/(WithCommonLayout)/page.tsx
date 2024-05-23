@@ -1,9 +1,9 @@
 import ContactForm from "@/components/ContactForm/ContactForm";
 import HeroSection from "@/components/UI/HeroSection/HeroSection";
-import ProjectSection from "@/components/UI/ProjectSection/ProjectSection";
 import Skill from "@/components/UI/Skill/Skill";
 import BlogPage from "./blog/page";
 import { Box } from "@mui/material";
+import ProjectPage from "./project/page";
 
 const HomePage = () => {
   return (
@@ -11,7 +11,7 @@ const HomePage = () => {
       <HeroSection />
       <Box marginLeft={5}>
         <Skill />
-        <ProjectSection />
+        <ProjectPage />
         <BlogPage />
         <ContactForm />
       </Box>
