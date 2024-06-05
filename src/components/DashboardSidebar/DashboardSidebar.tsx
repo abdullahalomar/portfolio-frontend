@@ -13,8 +13,15 @@ import skills from "@/assets/img/dashboard-icons/skill.png";
 import projects from "@/assets/img/dashboard-icons/project.png";
 import blogs from "@/assets/img/dashboard-icons/blog.png";
 import experiences from "@/assets/img/dashboard-icons/experience.png";
+import Cookies from "js-cookie";
+import { useRouter } from "next/navigation";
 
 const SideBar = () => {
+  const router = useRouter();
+  const handleLogOut = () => {
+    Cookies.remove("token");
+    router.push("/");
+  };
   return (
     <Box>
       <Stack
@@ -66,6 +73,15 @@ const SideBar = () => {
             </Link>
           </ListItemButton>
         </ListItem>
+
+        <ListItem disablePadding sx={{ mb: 3 }}>
+          <ListItemButton onClick={handleLogOut}>
+            <Typography className="font-extrabold bg-red-500 px-5 py-2 rounded-md ms-6">
+              Logout
+            </Typography>
+          </ListItemButton>
+        </ListItem>
+
         {/* 
         <ListItem disablePadding sx={{ mb: 3 }}>
           <ListItemButton>
