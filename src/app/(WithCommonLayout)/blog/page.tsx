@@ -12,7 +12,7 @@ import { useGetAllBlogsQuery } from "@/redux/api/blogApi";
 
 export default function BlogPage() {
   const { data, isLoading } = useGetAllBlogsQuery({});
-  const blogs = data?.blogs;
+  const blogs: any = data?.blogs;
   // console.log(blogs);
 
   return (

@@ -1,5 +1,6 @@
-import { useLoginMutation } from "@/redux/api/authApi";
-import { useAppDispatch } from "@/redux/hooks";
+"use client";
+
+import { loginUser } from "@/utils/action/loginUser";
 import {
   Box,
   Button,
@@ -9,10 +10,34 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import { FieldValues, useForm } from "react-hook-form";
-import { toast } from "sonner";
+import { useRouter } from "next/navigation";
+import { useForm } from "react-hook-form";
+import Cookies from "js-cookie";
+
+export type formValues = {
+  email: string;
+  password: string;
+};
 
 const loginPage = () => {
+  const { register, handleSubmit } = useForm();
+  const router = useRouter();
+
+  const onSubmit = async (data: formValues) => {
+    try {
+      const res = await loginUser(data);
+      // console.log(res);
+      if (res?.token) {
+        // Store the token in cookies
+        Cookies.set("token", res.token, { expires: 1 }); // expires in 1 day
+        router.push("/Dashboard");
+      }
+    } catch (error: any) {
+      console.error(error.message);
+      throw new Error(error.message);
+    }
+  };
+
   return (
     <Box mt={20}>
       <Container>
@@ -22,7 +47,7 @@ const loginPage = () => {
           >
             Login
           </Typography>
-          <form className="card-body">
+          <form onSubmit={handleSubmit(onSubmit)} className="card-body">
             <Grid
               container
               rowSpacing={3}
@@ -34,8 +59,8 @@ const loginPage = () => {
                     id="outlined-basic"
                     label="User Name"
                     variant="outlined"
-                    type="text"
-                    // {...register("title")}
+                    type="email"
+                    {...register("email")}
                     placeholder="user name"
                     required
                     fullWidth
@@ -49,7 +74,7 @@ const loginPage = () => {
                     label="Password"
                     variant="outlined"
                     type="password"
-                    // {...register("description")}
+                    {...register("password")}
                     placeholder="password"
                     required
                     fullWidth
@@ -59,21 +84,8 @@ const loginPage = () => {
               </Grid>
             </Grid>
 
-            {/* <div className="form-control mt-6">
-          <input
-            type="file"
-            accept="image/*"
-            onChange={handleImageChange}
-            className="input input-bordered"
-            required
-          />
-        </div> */}
-
             <Box mt={3}>
-              <Button type="submit">
-                {/* {isLoading ? "Adding..." : "Add Blog"} */}
-                Login
-              </Button>
+              <Button type="submit">Login</Button>
             </Box>
           </form>
         </Card>

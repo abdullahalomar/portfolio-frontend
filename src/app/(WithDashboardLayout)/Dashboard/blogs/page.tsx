@@ -57,7 +57,7 @@ const BlogPage = () => {
       console.error(error.message);
     }
   };
-  console.log(blogs);
+  // console.log(blogs);
 
   return (
     <Box>
