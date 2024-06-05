@@ -103,6 +103,7 @@ const HeroSection = () => {
               marginLeft: { xs: "30px", sm: "50px" },
               marginRight: { md: "20px", lg: "20px" },
             }}
+            data-aos="fade-up"
           >
             <Image src={heroImage} alt="hero-image" height={500} width={500} />
           </Box>
@@ -158,5 +159,5 @@ const HeroSection = () => {
     </Box>
   );
 };
-
 export default HeroSection;
+<script>AOS.init();</script>;

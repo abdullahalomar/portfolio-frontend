@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 "use client";
 
 import { loginUser } from "@/utils/action/loginUser";
@@ -11,19 +12,19 @@ import {
   Typography,
 } from "@mui/material";
 import { useRouter } from "next/navigation";
-import { useForm } from "react-hook-form";
+import { FieldValues, useForm } from "react-hook-form";
 import Cookies from "js-cookie";
 
-export type formValues = {
-  email: string;
-  password: string;
-};
+// export type formValues = {
+//   email: string;
+//   password: string;
+// };
 
 const loginPage = () => {
   const { register, handleSubmit } = useForm();
   const router = useRouter();
 
-  const onSubmit = async (data: formValues) => {
+  const onSubmit = async (data: FieldValues) => {
     try {
       const res = await loginUser(data);
       // console.log(res);

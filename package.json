@@ -20,6 +20,7 @@
     "@mui/x-data-grid": "^7.4.0",
     "@ntegral/react-owl-carousel": "^1.0.1",
     "@reduxjs/toolkit": "^2.2.4",
+    "aos": "^2.3.4",
     "axios": "^1.6.8",
     "js-cookie": "^3.0.5",
     "keen-slider": "^6.8.6",
@@ -37,6 +38,7 @@
     "swiper": "^11.1.1"
   },
   "devDependencies": {
+    "@types/js-cookie": "^3.0.6",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
