@@ -1,8 +1,8 @@
 "use server";
 
-import { formValues } from "@/app/login/page";
+import { FieldValues } from "react-hook-form";
 
-export const loginUser = async (data: formValues) => {
+export const loginUser = async (data: FieldValues) => {
   const res = fetch(`${process.env.BASE_URL}/login`, {
     method: "POST",
     headers: {
