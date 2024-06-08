@@ -9,7 +9,7 @@ const HomePage = () => {
   return (
     <Box>
       <HeroSection />
-      <Box marginLeft={5}>
+      <Box>
         <Skill />
         <ProjectPage />
         <BlogPage />

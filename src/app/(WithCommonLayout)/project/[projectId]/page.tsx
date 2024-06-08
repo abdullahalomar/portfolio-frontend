@@ -8,7 +8,7 @@ const ProjectDetailsPage = ({ params }: { params: { projectId: string } }) => {
   const { data: projectDetails, isLoading } = useGetSingleProjectQuery(
     params.projectId
   );
-  console.log(projectDetails);
+  // console.log(projectDetails);
 
   return (
     <Box>

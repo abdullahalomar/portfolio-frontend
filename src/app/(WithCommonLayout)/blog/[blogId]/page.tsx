@@ -6,8 +6,8 @@ import React from "react";
 
 const blogDetailsPage = ({ params }: { params: { blogId: string } }) => {
   // eslint-disable-next-line react-hooks/rules-of-hooks
-  const { data: singleBlog, isLoading } = useGetSingleBlogQuery(params.blogId);
-  // console.log(singleBlog);
+  const { data: singleBlog, isLoading } = useGetSingleBlogQuery(params?.blogId);
+  console.log(singleBlog);
 
   return (
     <Box>

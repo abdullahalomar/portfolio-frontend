@@ -1,9 +1,11 @@
 import { Blog } from "@/types";
-import { Box, Container, Grid, Stack, Typography } from "@mui/material";
+import { Box, Container, Grid, Typography } from "@mui/material";
 import Image from "next/image";
 import React from "react";
 
 const BlogDetails = ({ blog }: { blog: Blog }) => {
+  console.log(blog);
+
   return (
     <Box mt={5}>
       <Container>

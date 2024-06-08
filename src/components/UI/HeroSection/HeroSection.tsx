@@ -8,6 +8,7 @@ import Image from "next/image";
 import { keyframes } from "@emotion/react";
 import ball from "@/assets/img/hero/hero-light-2.png";
 import bg from "@/assets/img/map-light.png";
+import bgGradient from "@/assets/Gradient.png";
 
 const bounceAnimation = keyframes`
   0% {
@@ -85,15 +86,15 @@ const HeroSection = () => {
           sx={{
             position: "relative",
             paddingTop: 2,
-            backgroundImage: `url(${bg.src})`,
+            backgroundImage: `url(${bgGradient.src})`,
             backgroundBlendMode: "overlay",
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center",
             backgroundColor: {
               xs: "#928abf",
-              sm: "red",
-              md: "green",
+              sm: "#928abf",
+              md: "#928abf",
               lg: "#928abf",
             },
           }}
@@ -103,7 +104,6 @@ const HeroSection = () => {
               marginLeft: { xs: "30px", sm: "50px" },
               marginRight: { md: "20px", lg: "20px" },
             }}
-            data-aos="fade-up"
           >
             <Image src={heroImage} alt="hero-image" height={500} width={500} />
           </Box>
