@@ -54,9 +54,9 @@ export default function BlogPage() {
                   </Typography>
                 </Stack>
                 <Typography color="text.secondary" variant="body2">
-                  {blog.description.length > 150
-                    ? `${blog.description.substring(0, 150)}...`
-                    : blog.description}
+                  {blog?.description?.length > 150
+                    ? `${blog?.description?.substring(0, 150)}...`
+                    : blog?.description}
                 </Typography>
               </Box>
 

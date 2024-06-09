@@ -25,7 +25,7 @@ const ProjectCard = () => {
             key={project._id}
             variant="outlined"
             sx={{
-              width: 550,
+              maxWidth: 500,
               borderRadius: 8,
               background: "linear-gradient(to right, #321160, #522a8c)",
             }}
@@ -40,7 +40,7 @@ const ProjectCard = () => {
                     alt="online image"
                   />
                 </Box>
-                <Box marginLeft={1}>
+                <Box marginLeft={2}>
                   <Typography fontWeight="bold" color="white" component="div">
                     {project.title}
                   </Typography>

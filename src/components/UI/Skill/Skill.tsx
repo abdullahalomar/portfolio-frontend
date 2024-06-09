@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-key */
 "use client";
 import {
   Box,
@@ -52,14 +53,25 @@ const Skill = () => {
           divider={<Divider orientation="vertical" flexItem />}
         >
           {skills?.map((skill: any) => (
-            <DemoPaper key={skill?._id} variant="outlined">
-              <Image
-                src={skill?.image}
-                height={70}
-                width={90}
-                alt="skill image"
-              />
-            </DemoPaper>
+            <Box>
+              <DemoPaper
+                key={skill?._id}
+                variant="outlined"
+                sx={{
+                  background: "linear-gradient(to right, #321160, #522a8c)",
+                }}
+              >
+                <Image
+                  src={skill?.image}
+                  height={70}
+                  width={90}
+                  alt="skill image"
+                />
+              </DemoPaper>
+              <Typography sx={{ textAlign: "center", fontWeight: "600" }}>
+                {skill?.title}
+              </Typography>
+            </Box>
           ))}
         </Stack>
       </Container>

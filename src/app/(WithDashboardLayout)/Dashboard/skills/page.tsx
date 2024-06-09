@@ -20,7 +20,6 @@ import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 
 import Paper from "@mui/material/Paper";
 import Image from "next/image";
-import skill from "@/assets/img/skills/React.png";
 
 import {
   useDeleteSkillMutation,
@@ -106,7 +105,7 @@ const SkillPage = () => {
                       >
                         <DeleteOutlineIcon />
                       </IconButton>
-                      <Link href={`/Dashboard/skills/edit/${skill._id}`}>
+                      <Link href={`/Dashboard/skills/edit/${skill?._id}`}>
                         <IconButton aria-label="edit">
                           <EditNoteIcon />
                         </IconButton>

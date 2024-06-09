@@ -45,7 +45,7 @@ const AddSkill = () => {
           "https://api.imgbb.com/1/upload?key=85c1216e45edfae5e4e2980d02d293ba",
           formData
         );
-        imageUrl = response.data.data.url;
+        imageUrl = response?.data?.data?.url;
       }
 
       const response = await createSkill({
