@@ -9,6 +9,7 @@ import { keyframes } from "@emotion/react";
 import ball from "@/assets/img/hero/hero-light-2.png";
 import bg from "@/assets/img/map-light.png";
 import bgGradient from "@/assets/Gradient.png";
+import SystemUpdateAltIcon from "@mui/icons-material/SystemUpdateAlt";
 
 const bounceAnimation = keyframes`
   0% {
@@ -38,13 +39,13 @@ const HeroSection = () => {
         sx={{
           position: "relative",
           display: {
-            xs: "flex-wrap",
-            sm: "flex-wrap",
+            xs: "flex",
+            sm: "flex",
             md: "flex",
             lg: "flex",
             xl: "flex",
           },
-          justifyContent: "space-between",
+          justifyContent: "center",
           alignItems: "center",
           marginTop: {
             xs: 10,
@@ -55,7 +56,7 @@ const HeroSection = () => {
           },
         }}
       >
-        <Box sx={{ marginLeft: 10 }}>
+        {/* <Box sx={{ marginLeft: 10 }}>
           <Typography sx={{ fontSize: "60px", fontWeight: "bold" }}>
             <Box component="span" sx={{ color: "primary.main" }}>
               Hey
@@ -80,7 +81,7 @@ const HeroSection = () => {
           >
             Download CV
           </Button>
-        </Box>
+        </Box> */}
 
         <Box
           sx={{
@@ -91,22 +92,42 @@ const HeroSection = () => {
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center",
-            backgroundColor: {
-              xs: "#928abf",
-              sm: "#928abf",
-              md: "#928abf",
-              lg: "#928abf",
-            },
+            width: { xs: "30%", sm: "30%", md: "30%", lg: "30%" },
+            height: "60vh",
+            // backgroundColor: '#928abf',
           }}
         >
-          <Box
+          <Box>
+            <Image
+              className="rounded-full"
+              src={heroImage}
+              alt="hero-image"
+              height={200}
+              width={300}
+            />
+            <Box>
+              <Typography>Hi I'm Abdullah Al Omar</Typography>
+              <Typography>Website Design, app &and developer</Typography>
+              <Typography>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum,
+                odio?
+              </Typography>
+              <Box sx={{ display: "flex", alignItems: "center", mt: 3 }}>
+                <Button>Hire me</Button>
+                <Typography sx={{ marginLeft: "30px" }}>
+                  Download CV <SystemUpdateAltIcon />
+                </Typography>
+              </Box>
+            </Box>
+          </Box>
+          {/* <Box
             sx={{
               marginLeft: { xs: "30px", sm: "50px" },
               marginRight: { md: "20px", lg: "20px" },
             }}
           >
             <Image src={heroImage} alt="hero-image" height={500} width={500} />
-          </Box>
+          </Box> */}
           <Box
             sx={{
               position: "absolute",
@@ -150,8 +171,8 @@ const HeroSection = () => {
         sx={{
           animation: `${bounceAnimation} 6s infinite`,
           position: "absolute",
-          right: 40,
-          top: 320,
+          right: 540,
+          top: 120,
         }}
       >
         <Image src={ball} alt="hero-image" height={50} width={50} />
