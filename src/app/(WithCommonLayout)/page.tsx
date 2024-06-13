@@ -9,11 +9,11 @@ const HomePage = () => {
   return (
     <Box>
       <HeroSection />
-      <Box>
-        <Skill />
-        <ProjectPage />
-        <BlogPage />
-      </Box>
+
+      <Skill />
+      <ProjectPage />
+      <BlogPage />
+
       <ContactForm />
     </Box>
   );
