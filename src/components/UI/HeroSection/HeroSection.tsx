@@ -94,24 +94,20 @@ const HeroSection = () => {
               backgroundRepeat: "no-repeat",
               backgroundPosition: "center",
               width: { xs: "100%", sm: "50%", md: "40%", lg: "30%" },
-              // backgroundColor: {
-              //   xs: "red",
-              //   sm: "yellow",
-              //   md: "blue",
-              //   lg: "green",
-              // },
               height: "60vh",
               // backgroundColor: '#928abf',
             }}
           >
             <Box>
-              <Image
-                className="rounded-full"
-                src={heroImage}
-                alt="hero-image"
-                height={200}
-                width={300}
-              />
+              <Box sx={{ paddingLeft: { xs: 7, sm: 0, md: 0, lg: 0 } }}>
+                <Image
+                  className="rounded-full"
+                  src={heroImage}
+                  alt="hero-image"
+                  height={200}
+                  width={300}
+                />
+              </Box>
               <Box sx={{ textAlign: "center", mt: 2, mb: 5 }}>
                 <Typography sx={{ fontSize: "20px" }}>
                   <Box component="span" color="primary.main">
