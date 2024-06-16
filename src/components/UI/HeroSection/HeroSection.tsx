@@ -10,6 +10,7 @@ import bg from "@/assets/img/map-light.png";
 import bgGradient from "@/assets/Gradient.png";
 import SystemUpdateAltIcon from "@mui/icons-material/SystemUpdateAlt";
 import Link from "next/link";
+import { TypeAnimation } from "react-type-animation";
 
 const bounceAnimation = keyframes`
   0% {
@@ -109,27 +110,39 @@ const HeroSection = () => {
                 />
               </Box>
               <Box sx={{ textAlign: "center", mt: 2, mb: 5 }}>
-                <Typography sx={{ fontSize: "20px" }}>
+                <Typography sx={{ fontSize: "2em" }}>
                   <Box component="span" color="primary.main">
                     Hi
                   </Box>{" "}
                   I'm Abdullah Al Omar
                 </Typography>
-                <Typography
-                  sx={{
+
+                <TypeAnimation
+                  style={{
+                    whiteSpace: "pre-line",
+
+                    display: "block",
                     fontSize: "24px",
                     fontWeight: "bold",
                     color: "#8563b2",
                   }}
-                >
-                  Website Design, app, <br /> & developer
-                </Typography>
+                  sequence={[`Website Design, app,\n& developer`, 500]}
+                  repeat={Infinity}
+                />
+
                 <Typography sx={{ color: "#01204E" }}>
                   Frontend developer and android, ios app developer. I
                   specialize in Ui design, responsive web design and visual
                   development.
                 </Typography>
-                <Box sx={{ display: "flex", alignItems: "center", mt: 3 }}>
+                <Box
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    mt: 3,
+                  }}
+                >
                   <Typography
                     component={Link}
                     href="#"
@@ -189,7 +202,7 @@ const HeroSection = () => {
           sx={{
             animation: `${bounceAnimation} 6s infinite`,
             position: "absolute",
-            right: 540,
+            right: 500,
             top: 120,
           }}
         >
