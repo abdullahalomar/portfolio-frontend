@@ -49,7 +49,7 @@ const HeroSection = () => {
             justifyContent: "center",
             alignItems: "center",
             marginTop: {
-              xs: 10,
+              xs: 6,
               sm: 0,
               md: 0,
               lg: 0,
@@ -93,7 +93,13 @@ const HeroSection = () => {
               backgroundSize: "cover",
               backgroundRepeat: "no-repeat",
               backgroundPosition: "center",
-              width: { xs: "30%", sm: "70%", md: "70%", lg: "30%" },
+              width: { xs: "60%", sm: "50%", md: "40%", lg: "30%" },
+              // backgroundColor: {
+              //   xs: "red",
+              //   sm: "yellow",
+              //   md: "blue",
+              //   lg: "green",
+              // },
               height: "60vh",
               // backgroundColor: '#928abf',
             }}
