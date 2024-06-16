@@ -93,7 +93,7 @@ const HeroSection = () => {
               backgroundSize: "cover",
               backgroundRepeat: "no-repeat",
               backgroundPosition: "center",
-              width: { xs: "60%", sm: "50%", md: "40%", lg: "30%" },
+              width: { xs: "90%", sm: "50%", md: "40%", lg: "30%" },
               // backgroundColor: {
               //   xs: "red",
               //   sm: "yellow",
