@@ -100,9 +100,18 @@ const HeroSection = () => {
             }}
           >
             <Box>
-              <Box sx={{ paddingLeft: { xs: 7, sm: 0, md: 0, lg: 0 } }}>
+              <Box
+                sx={{
+                  textAlign: {
+                    xs: "center",
+                    sm: "center",
+                    md: "center",
+                    lg: "center",
+                    xl: "center",
+                  },
+                }}
+              >
                 <Image
-                  className="rounded-full"
                   src={heroImage}
                   alt="hero-image"
                   height={200}
